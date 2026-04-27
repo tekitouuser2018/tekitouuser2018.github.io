@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeaveMeNow</title>
+    <meta
+      name="description"
+      content="LeaveMeNow is a simple mood and status sharing app for quick self-expression."
+    />
+    <style>
+      :root {
+        --bg: #fffafc;
+        --surface: #ffffff;
+        --surface-soft: #fff3f7;
+        --text: #2c2430;
+        --muted: #6d6270;
+        --accent: #ff6ba3;
+        --accent-soft: #ffd8e7;
+        --border: #f1dfe7;
+        --shadow: 0 16px 40px rgba(120, 70, 100, 0.08);
+        --radius: 22px;
+        --content-width: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top right, #ffe6f0 0, rgba(255, 230, 240, 0) 34%),
+          linear-gradient(180deg, #fff8fb 0%, #fffdfd 100%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .wrap {
+        width: min(100% - 32px, var(--content-width));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(14px);
+        background: rgba(255, 250, 252, 0.84);
+        border-bottom: 1px solid rgba(241, 223, 231, 0.9);
+      }
+
+      .site-header .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 68px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+      }
+
+      .brand-badge {
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), #ff9fc3);
+        box-shadow: 0 0 0 6px rgba(255, 107, 163, 0.12);
+      }
+
+      .nav {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .nav a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 72px 0 40px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .hero-copy,
+      .hero-card,
+      .section-card {
+        background: rgba(255, 255, 255, 0.86);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-copy {
+        padding: 36px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: var(--surface-soft);
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 18px 0 16px;
+        font-size: clamp(34px, 5vw, 56px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+      }
+
+      .lead {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.75;
+        color: var(--muted);
+        max-width: 40rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border-radius: 14px;
+        font-weight: 700;
+        transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button-primary {
+        color: white;
+        background: linear-gradient(135deg, var(--accent), #ff8db8);
+      }
+
+      .button-secondary {
+        color: var(--text);
+        background: #fff;
+        border: 1px solid var(--border);
+      }
+
+      .hero-card {
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .hero-card h2 {
+        margin: 0 0 12px;
+        font-size: 22px;
+      }
+
+      .hero-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .mini-list {
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .mini-list li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        color: var(--text);
+      }
+
+      .mini-dot {
+        width: 10px;
+        height: 10px;
+        flex: 0 0 10px;
+        margin-top: 7px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .section {
+        padding: 16px 0 28px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: 28px;
+      }
+
+      .section-heading p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .feature {
+        padding: 22px;
+      }
+
+      .feature h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .feature p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .screenshots {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .shot {
+        overflow: hidden;
+      }
+
+      .shot-frame {
+        aspect-ratio: 9 / 19.5;
+        background:
+          linear-gradient(180deg, rgba(255, 107, 163, 0.08), rgba(255, 107, 163, 0.02)),
+          #fff;
+        border: 1px dashed #e8c8d7;
+        border-radius: 18px;
+        padding: 10px;
+      }
+
+      .shot-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .shot-body {
+        padding: 16px 16px 18px;
+      }
+
+      .shot-body h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+      }
+
+      .shot-body p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 14px;
+      }
+
+      .notes {
+        margin-top: 18px;
+        padding: 18px 20px;
+        border-radius: 18px;
+        background: var(--surface-soft);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 14px;
+      }
+
+      .footer {
+        padding: 28px 0 44px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .footer-card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 20px 22px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .footer-links a:hover {
+        color: var(--text);
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .features,
+        .screenshots {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 40px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .site-header .wrap {
+          min-height: 60px;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .hero-copy,
+        .hero-card,
+        .feature,
+        .shot-body,
+        .footer-card {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+
+        .hero-copy {
+          padding-top: 24px;
+          padding-bottom: 24px;
+        }
+
+        .hero-card {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="#top" aria-label="LeaveMeNow home">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span>LeaveMeNow</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#screenshots">Screenshots</a>
+          <a href="#links">Links</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Simple status sharing app</span>
+            <h1>Express your mood quickly, lightly, and clearly.</h1>
+            <p class="lead">
+              LeaveMeNow helps you share your current vibe with simple status options,
+              quick forecast selections, and easy copy or share actions. It is designed
+              to be fast, playful, and easy to understand at a glance.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#screenshots">View screenshots</a>
+              <a class="button button-secondary" href="#links">Terms & Privacy</a>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="App summary">
+            <div>
+              <h2>What you can do</h2>
+              <p>
+                Pick a message tone, update your forecast categories, adjust HP and MP,
+                then copy or share the result in seconds.
+              </p>
+            </div>
+            <ul class="mini-list">
+              <li><span class="mini-dot"></span><span>Forecast for mood, situation, work, and private life</span></li>
+              <li><span class="mini-dot"></span><span>Quick message modes like My Forecast and LeaveMeNow</span></li>
+              <li><span class="mini-dot"></span><span>Simple HP / MP sliders and one-tap sharing</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <h2>Features</h2>
+              <p>A simple landing page for App Store links, support, and basic product explanation.</p>
+            </div>
+          </div>
+
+          <div class="features">
+            <article class="feature section-card">
+              <h3>Status modes</h3>
+              <p>
+                Switch between different message styles depending on how you want to be
+                approached right now.
+              </p>
+            </article>
+            <article class="feature section-card">
+              <h3>Quick forecast</h3>
+              <p>
+                Update mood, situation, work, and private categories with a clean visual
+                layout and fast editing flow.
+              </p>
+            </article>
+            <article class="feature section-card">
+              <h3>Share instantly</h3>
+              <p>
+                Copy your text or send it through the system share sheet without extra
+                steps.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="screenshots">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <h2>Screenshots</h2>
+              <p>
+                Place three iPhone simulator screenshots in the same folder as this HTML file.
+                The sample filenames below can be replaced freely.
+              </p>
+            </div>
+          </div>
+
+          <div class="screenshots">
+            <article class="shot section-card">
+              <div class="shot-frame">
+                <img src="./screenshot-1.png" alt="LeaveMeNow screenshot 1" />
+              </div>
+              <div class="shot-body">
+                <h3>Main screen</h3>
+                <p>Use this space for your main status selection or core product view.</p>
+              </div>
+            </article>
+
+            <article class="shot section-card">
+              <div class="shot-frame">
+                <img src="./screenshot-2.png" alt="LeaveMeNow screenshot 2" />
+              </div>
+              <div class="shot-body">
+                <h3>Forecast and bars</h3>
+                <p>Show HP / MP or forecast editing so the app's behavior is visible at a glance.</p>
+              </div>
+            </article>
+
+            <article class="shot section-card">
+              <div class="shot-frame">
+                <img src="./screenshot-3.png" alt="LeaveMeNow screenshot 3" />
+              </div>
+              <div class="shot-body">
+                <h3>Share or settings</h3>
+                <p>Use the third slot for sharing flow, settings, or purchase screen highlights.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="notes">
+            <strong>How to use these image slots:</strong><br />
+            Put this HTML file and your screenshots in the same folder, then place your images with names like
+            <code>screenshot-1.png</code>, <code>screenshot-2.png</code>, and <code>screenshot-3.png</code>.
+            If you prefer different names, just update the three <code>src</code> values above.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="links">
+      <div class="wrap footer-card section-card">
+        <div>© <span id="year"></span> LeaveMeNow</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
