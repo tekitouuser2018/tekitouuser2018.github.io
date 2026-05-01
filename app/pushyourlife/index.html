@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PushYourLife - Simple Local TODO App</title>
+    <meta
+      name="description"
+      content="PushYourLife is a simple local TODO app for organizing tasks by difficulty, parent-child structure, due dates, and archive."
+    />
+
+    <!--
+      Theme customization:
+      Change these CSS variables to adjust the LP theme.
+      --theme-color: main brand color
+      --sub-color: secondary/accent color
+      --soft-theme: light background tint
+      --soft-sub: light secondary tint
+    -->
+    <style>
+      :root {
+        color-scheme: light;
+
+        --theme-color: #2563eb;
+        --sub-color: #f59e0b;
+        --soft-theme: #eff6ff;
+        --soft-sub: #fffbeb;
+
+        --bg: #ffffff;
+        --bg-elevated: #ffffff;
+        --text: #172033;
+        --muted: #687386;
+        --border: #e6eaf0;
+        --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+        --soft-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+
+        --radius-xl: 28px;
+        --radius-lg: 20px;
+        --radius-md: 14px;
+
+        --max-width: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at top left, var(--soft-theme), transparent 34rem),
+          radial-gradient(circle at top right, var(--soft-sub), transparent 30rem),
+          var(--bg);
+        color: var(--text);
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          sans-serif;
+        line-height: 1.7;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .page {
+        overflow: hidden;
+      }
+
+      .container {
+        width: min(100% - 40px, var(--max-width));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.78);
+        border-bottom: 1px solid rgba(230, 234, 240, 0.78);
+      }
+
+      .nav {
+        min-height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      .brand-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 11px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--theme-color), var(--sub-color));
+        color: #ffffff;
+        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 86px 0 72px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.03fr) minmax(300px, 0.97fr);
+        align-items: center;
+        gap: 54px;
+      }
+
+      .eyebrow {
+        width: fit-content;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 650;
+      }
+
+      .eyebrow-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--theme-color);
+      }
+
+      .hero h1 {
+        margin: 22px 0 18px;
+        max-width: 760px;
+        font-size: clamp(2.55rem, 6vw, 5.5rem);
+        line-height: 0.98;
+        letter-spacing: -0.075em;
+      }
+
+      .hero h1 span {
+        color: var(--theme-color);
+      }
+
+      .hero-copy {
+        margin: 0;
+        max-width: 620px;
+        color: var(--muted);
+        font-size: clamp(1.03rem, 2vw, 1.22rem);
+      }
+
+      .hero-actions {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .button {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 999px;
+        padding: 0 20px;
+        font-weight: 750;
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease,
+          background 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button-primary {
+        color: #ffffff;
+        background: linear-gradient(135deg, var(--theme-color), #1d4ed8);
+        box-shadow: 0 14px 34px rgba(37, 99, 235, 0.28);
+      }
+
+      .button-secondary {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.76);
+        color: var(--text);
+      }
+
+      .hero-note {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .hero-card {
+        position: relative;
+        padding: 20px;
+        border: 1px solid rgba(230, 234, 240, 0.9);
+        border-radius: var(--radius-xl);
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        z-index: -1;
+        border-radius: inherit;
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--theme-color) 34%, transparent),
+          color-mix(in srgb, var(--sub-color) 34%, transparent)
+        );
+        opacity: 0.42;
+        filter: blur(22px);
+      }
+
+      .mock-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mock-row {
+        display: grid;
+        grid-template-columns: 42px 1fr auto;
+        align-items: center;
+        gap: 12px;
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: #ffffff;
+      }
+
+      .mock-icon {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        background: var(--soft-theme);
+        font-size: 1.2rem;
+      }
+
+      .mock-title {
+        margin: 0;
+        font-weight: 760;
+        line-height: 1.3;
+      }
+
+      .mock-meta {
+        margin: 3px 0 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 0.76rem;
+        font-weight: 800;
+      }
+
+      .pill-easy {
+        color: #1d4ed8;
+        background: #dbeafe;
+      }
+
+      .pill-middle {
+        color: #b45309;
+        background: #fef3c7;
+      }
+
+      .pill-great {
+        color: #be123c;
+        background: #ffe4e6;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .section-header {
+        max-width: 720px;
+        margin-bottom: 34px;
+      }
+
+      .section-kicker {
+        margin: 0 0 8px;
+        color: var(--theme-color);
+        font-size: 0.88rem;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1.08;
+        letter-spacing: -0.055em;
+      }
+
+      .section-copy {
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .feature-card {
+        padding: 22px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: var(--soft-shadow);
+      }
+
+      .feature-mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 15px;
+        background: linear-gradient(135deg, var(--soft-theme), var(--soft-sub));
+        font-size: 1.25rem;
+      }
+
+      .feature-card h3 {
+        margin: 16px 0 8px;
+        font-size: 1.1rem;
+      }
+
+      .feature-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .screenshots {
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0), #ffffff 18%),
+          linear-gradient(135deg, var(--soft-theme), var(--soft-sub));
+      }
+
+      .phone-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        align-items: start;
+      }
+
+      .phone-card {
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: var(--shadow);
+      }
+
+      .phone-frame {
+        overflow: hidden;
+        aspect-ratio: 9 / 19.5;
+        border: 10px solid #111827;
+        border-radius: 26px;
+        background:
+          linear-gradient(135deg, var(--soft-theme), var(--soft-sub));
+      }
+
+      .phone-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .screenshot-placeholder {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        color: var(--muted);
+        text-align: center;
+        font-weight: 750;
+      }
+
+      .phone-caption {
+        margin: 14px 6px 4px;
+      }
+
+      .phone-caption h3 {
+        margin: 0 0 4px;
+        font-size: 1rem;
+      }
+
+      .phone-caption p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .privacy-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+        gap: 24px;
+        align-items: center;
+        padding: 28px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        background: #ffffff;
+        box-shadow: var(--soft-shadow);
+      }
+
+      .privacy-list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .privacy-list li {
+        display: flex;
+        gap: 10px;
+        padding: 12px 14px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: #fbfdff;
+      }
+
+      .check {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        color: #ffffff;
+        background: var(--theme-color);
+        font-size: 0.82rem;
+        font-weight: 900;
+      }
+
+      .cta {
+        padding: 84px 0;
+      }
+
+      .cta-box {
+        padding: 38px;
+        border-radius: var(--radius-xl);
+        color: #ffffff;
+        background:
+          radial-gradient(circle at top right, rgba(255, 255, 255, 0.26), transparent 22rem),
+          linear-gradient(135deg, var(--theme-color), #1e40af);
+        box-shadow: var(--shadow);
+      }
+
+      .cta-box h2 {
+        margin: 0;
+        max-width: 780px;
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        line-height: 1.08;
+        letter-spacing: -0.055em;
+      }
+
+      .cta-box p {
+        margin: 14px 0 0;
+        max-width: 680px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 1.05rem;
+      }
+
+      .cta-actions {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .store-button {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: #ffffff;
+        color: var(--text);
+        font-weight: 850;
+      }
+
+      .store-button-muted {
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+      }
+
+      .site-footer {
+        padding: 28px 0 42px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a:hover {
+        color: var(--text);
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          padding-top: 64px;
+        }
+
+        .hero-grid,
+        .privacy-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-grid,
+        .phone-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .phone-card {
+          max-width: 360px;
+          margin: 0 auto;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .container {
+          width: min(100% - 28px, var(--max-width));
+        }
+
+        .hero {
+          padding: 46px 0 52px;
+        }
+
+        .section {
+          padding: 54px 0;
+        }
+
+        .hero-card,
+        .cta-box,
+        .privacy-panel {
+          padding: 20px;
+        }
+
+        .mock-row {
+          grid-template-columns: 38px 1fr;
+        }
+
+        .mock-row .pill {
+          grid-column: 2;
+          width: fit-content;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="container nav">
+          <a class="brand" href="#top" aria-label="PushYourLife home">
+            <span class="brand-icon">✓</span>
+            <span>PushYourLife</span>
+          </a>
+
+          <nav class="nav-links" aria-label="Primary navigation">
+            <a href="#features">Features</a>
+            <a href="#screenshots">Screenshots</a>
+            <a href="#privacy">Local-first</a>
+            <a href="#download">Download</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="container hero-grid">
+            <div>
+              <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                Simple local TODO app
+              </div>
+
+              <h1>
+                Keep tasks small,
+                <span>clear,</span>
+                and ready to do.
+              </h1>
+
+              <p class="hero-copy">
+                PushYourLife is a lightweight TODO app for organizing tasks by
+                difficulty, parent-child structure, due dates, icons, and archive.
+                No account required. Your tasks stay on your device.
+              </p>
+
+              <div class="hero-actions">
+                <a class="button button-primary" href="#download">
+                  Get the app
+                </a>
+                <a class="button button-secondary" href="#screenshots">
+                  View screenshots
+                </a>
+              </div>
+
+              <p class="hero-note">
+                Designed for quick input, low cognitive load, and local task management.
+              </p>
+            </div>
+
+            <div class="hero-card" aria-label="App preview card">
+              <div class="mock-list">
+                <div class="mock-row">
+                  <div class="mock-icon">🧹</div>
+                  <div>
+                    <p class="mock-title">Clean up small tasks</p>
+                    <p class="mock-meta">Today · child task · due soon</p>
+                  </div>
+                  <span class="pill pill-easy">Easy</span>
+                </div>
+
+                <div class="mock-row">
+                  <div class="mock-icon">📝</div>
+                  <div>
+                    <p class="mock-title">Plan the next feature</p>
+                    <p class="mock-meta">Parent task · 3 child tasks</p>
+                  </div>
+                  <span class="pill pill-middle">Middle</span>
+                </div>
+
+                <div class="mock-row">
+                  <div class="mock-icon">🚀</div>
+                  <div>
+                    <p class="mock-title">Prepare release checklist</p>
+                    <p class="mock-meta">Archived when finished</p>
+                  </div>
+                  <span class="pill pill-great">Great</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="section">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-kicker">Features</p>
+              <h2 class="section-title">A TODO app focused on doing, not managing.</h2>
+              <p class="section-copy">
+                Keep the structure simple. Split big tasks into child tasks, sort
+                them by difficulty, and archive what you no longer need in the main queue.
+              </p>
+            </div>
+
+            <div class="feature-grid">
+              <article class="feature-card">
+                <div class="feature-mark">🎯</div>
+                <h3>Difficulty tabs</h3>
+                <p>
+                  Organize tasks into Easy, Middle, and Great so you can choose
+                  the right task for your current energy.
+                </p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-mark">🌿</div>
+                <h3>Parent-child tasks</h3>
+                <p>
+                  Break large tasks into smaller child tasks without turning your
+                  task list into a complex project management tool.
+                </p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-mark">📦</div>
+                <h3>Archive and restore</h3>
+                <p>
+                  Move completed or paused tasks out of the way, then restore
+                  them later when you need them again.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="screenshots" class="section screenshots">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-kicker">Screenshots</p>
+              <h2 class="section-title">Three screens to show the app flow.</h2>
+              <p class="section-copy">
+                Replace the image paths below with your actual smartphone screenshots.
+                Recommended: portrait PNG or JPG images.
+              </p>
+            </div>
+
+            <div class="phone-grid">
+              <article class="phone-card">
+                <div class="phone-frame">
+                  <!-- Replace with your screenshot path. Example: assets/screenshots/main.png -->
+                  <img
+                    src="assets/screenshots/screenshot-1.png"
+                    alt="PushYourLife Main screen screenshot"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                  />
+                  <div class="screenshot-placeholder" style="display: none;">
+                    Screenshot 1<br />Main
+                  </div>
+                </div>
+                <div class="phone-caption">
+                  <h3>Main queue</h3>
+                  <p>See tasks by difficulty and pick what to do next.</p>
+                </div>
+              </article>
+
+              <article class="phone-card">
+                <div class="phone-frame">
+                  <!-- Replace with your screenshot path. Example: assets/screenshots/task.png -->
+                  <img
+                    src="assets/screenshots/screenshot-2.png"
+                    alt="PushYourLife Task management screenshot"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                  />
+                  <div class="screenshot-placeholder" style="display: none;">
+                    Screenshot 2<br />Task
+                  </div>
+                </div>
+                <div class="phone-caption">
+                  <h3>Task structure</h3>
+                  <p>Manage parent tasks, child tasks, icons, and due dates.</p>
+                </div>
+              </article>
+
+              <article class="phone-card">
+                <div class="phone-frame">
+                  <!-- Replace with your screenshot path. Example: assets/screenshots/archive.png -->
+                  <img
+                    src="assets/screenshots/screenshot-3.png"
+                    alt="PushYourLife Archive screen screenshot"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                  />
+                  <div class="screenshot-placeholder" style="display: none;">
+                    Screenshot 3<br />Archive
+                  </div>
+                </div>
+                <div class="phone-caption">
+                  <h3>Archive</h3>
+                  <p>Keep old tasks out of the main view without losing them immediately.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="privacy" class="section">
+          <div class="container">
+            <div class="privacy-panel">
+              <div>
+                <p class="section-kicker">Local-first</p>
+                <h2 class="section-title">No account required. Tasks stay local.</h2>
+                <p class="section-copy">
+                  PushYourLife is designed as a simple local task manager. It does
+                  not require login or cloud sync for its core task features.
+                </p>
+              </div>
+
+              <ul class="privacy-list">
+                <li>
+                  <span class="check">✓</span>
+                  <span>Task data is generally stored on your device.</span>
+                </li>
+                <li>
+                  <span class="check">✓</span>
+                  <span>No account registration is required for core usage.</span>
+                </li>
+                <li>
+                  <span class="check">✓</span>
+                  <span>Optional Remove Ads purchase can hide in-app ads.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="download" class="cta">
+          <div class="container">
+            <div class="cta-box">
+              <h2>Start with a smaller, cleaner task list.</h2>
+              <p>
+                Download PushYourLife and organize your tasks by difficulty,
+                structure, due dates, and archive status.
+              </p>
+
+              <div class="cta-actions">
+                <!-- Replace href with your App Store URL after release. -->
+                <a class="store-button" href="#" aria-label="Download on the App Store">
+                  App Store
+                </a>
+
+                <!-- Keep or remove this depending on Android release timing. -->
+                <a class="store-button store-button-muted" href="#" aria-label="Get it on Google Play">
+                  Google Play
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            © <span id="year"></span> PushYourLife. All rights reserved.
+          </div>
+
+          <div class="footer-links">
+            <!-- Adjust paths to match your GitHub Pages directory. -->
+            <a href="terms_en.html">Terms</a>
+            <a href="privacy_policy_en.html">Privacy Policy</a>
+            <a href="support.html">Support</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
