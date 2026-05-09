@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fan-Made Goods Sales License Terms | TomaToma</title>
+  <meta
+    name="description"
+    content="Fan-made goods sales license terms for individual creators using the TomaToma IP."
+  />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #4f46e5;
+      --accent-bg: #eef2ff;
+      --success: #047857;
+      --success-bg: #ecfdf5;
+      --warning: #92400e;
+      --warning-bg: #fffbeb;
+      --danger: #b91c1c;
+      --danger-bg: #fef2f2;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .hero {
+      padding: 42px 32px;
+      background: linear-gradient(135deg, #ffffff, #eef2ff);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .hero__label {
+      display: inline-block;
+      padding: 4px 12px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .notice,
+    .summary,
+    .warning-box {
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      border-radius: var(--radius);
+      border: 1px solid #c7d2fe;
+      background: var(--accent-bg);
+    }
+
+    .notice p,
+    .summary p,
+    .warning-box p {
+      margin: 0;
+    }
+
+    .summary {
+      border-color: #a7f3d0;
+      background: var(--success-bg);
+    }
+
+    .summary strong {
+      color: var(--success);
+    }
+
+    .warning-box {
+      border-color: #fde68a;
+      background: var(--warning-bg);
+    }
+
+    .warning-box strong {
+      color: var(--warning);
+    }
+
+    .toc {
+      padding: 24px;
+      margin-bottom: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 1.4em;
+    }
+
+    .toc li {
+      margin: 4px 0;
+    }
+
+    section {
+      padding: 28px;
+      margin-bottom: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.45rem;
+      line-height: 1.35;
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 14px;
+      padding-left: 1.4em;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .mini-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #f9fafb;
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+    }
+
+    .ok {
+      border-color: #a7f3d0;
+      background: var(--success-bg);
+    }
+
+    .ng {
+      border-color: #fecaca;
+      background: var(--danger-bg);
+    }
+
+    .ng h3,
+    .danger strong {
+      color: var(--danger);
+    }
+
+    .example,
+    .credit-box {
+      padding: 14px 16px;
+      margin: 14px 0;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-bg);
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .credit-box {
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      font-size: 0.95rem;
+      font-weight: 500;
+      overflow-x: auto;
+      white-space: normal;
+    }
+
+    .danger {
+      padding: 16px 18px;
+      margin: 16px 0;
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      background: var(--danger-bg);
+    }
+
+    .country-panel {
+      padding: 18px;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #f9fafb;
+    }
+
+    .country-panel h3 {
+      margin-top: 0;
+    }
+
+    .country-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 6px 18px;
+      padding-left: 1.1em;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .country-list li {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f9fafb;
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding: 28px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 20px, 980px);
+        padding-top: 20px;
+      }
+
+      .hero,
+      section,
+      .toc {
+        padding: 22px 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero__label">Fan-Made Goods License</div>
+      <h1>TomaToma Fan-Made Goods Sales License Terms</h1>
+      <p class="lead">
+        These Terms set out the rules that allow individual creators who love TomaToma and respect its world to sell
+        small-scale physical fan-made goods as an extension of fan activity.
+      </p>
+      <p class="meta">
+        Published: May 9, 2026 / Last updated: May 9, 2026
+      </p>
+    </header>
+
+    <div class="notice">
+      <p>
+        These Terms apply together with the TomaToma Fan Creation Guidelines. Matters not expressly covered by these Terms
+        are governed by the Fan Creation Guidelines. If there is any inconsistency between this English version and the Japanese version,
+        the Japanese version shall prevail.
+      </p>
+    </div>
+
+    <div class="summary">
+      <p>
+        <strong>Summary:</strong>
+        Individual creators who meet the conditions below may sell physical fan-made goods without prior approval and without paying a license fee.
+        If annual sales from eligible goods exceed the equivalent of USD 30,000, a 10% license fee applies only to the amount exceeding USD 30,000.
+      </p>
+    </div>
+
+    <div class="warning-box">
+      <p>
+        <strong>Important:</strong>
+        Digital products, children’s products, plush toys, dolls, figures, toys, food, cosmetics, NFTs, AI-related products,
+        and similar items are not eligible for sale under these Terms.
+      </p>
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#purpose">Purpose</a></li>
+        <li><a href="#relation">Relationship with the Fan Creation Guidelines</a></li>
+        <li><a href="#definitions">Definitions</a></li>
+        <li><a href="#eligible">Eligible Creators</a></li>
+        <li><a href="#territory">Licensed Countries and Sales Territories</a></li>
+        <li><a href="#license">Scope of License</a></li>
+        <li><a href="#income-sales">Annual Income and Annual Sales</a></li>
+        <li><a href="#royalty">License Fee for Sales Above the Threshold</a></li>
+        <li><a href="#permitted-goods">Goods That May Be Sold</a></li>
+        <li><a href="#prohibited-goods">Goods That May Not Be Sold</a></li>
+        <li><a href="#production-method">Production and Sales Methods</a></li>
+        <li><a href="#credit">Notices and Credit</a></li>
+        <li><a href="#environment">Materials and Environmental Considerations</a></li>
+        <li><a href="#prohibited-conduct">Prohibited Conduct</a></li>
+        <li><a href="#reporting">Self-Reporting, Reports, and Payment</a></li>
+        <li><a href="#suspension">Suspension of Sales and Revocation of License</a></li>
+        <li><a href="#liability">Responsibility and Disclaimer</a></li>
+        <li><a href="#changes">Changes to These Terms</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <section id="purpose">
+      <h2>1. Purpose</h2>
+      <p>
+        These Terms are intended to allow individual creators who love TomaToma and respect its world to sell small-scale fan-made goods
+        in order to supplement living expenses, tuition, creative activity costs, or similar needs.
+      </p>
+      <p>
+        We respect fan creativity. At the same time, in order to protect TomaToma’s image, world, brand, third-party rights,
+        and purchaser safety, uses that violate the conditions set out in these Terms are prohibited.
+      </p>
+    </section>
+
+    <section id="relation">
+      <h2>2. Relationship with the Fan Creation Guidelines</h2>
+      <p>
+        These Terms are separate from the TomaToma Fan Creation Guidelines and specifically govern the sale of fan-made goods.
+      </p>
+      <p>
+        Eligible Creators must comply with both these Terms and the Fan Creation Guidelines. If these Terms conflict with the Fan Creation Guidelines,
+        these Terms shall prevail with respect to sales-related matters.
+      </p>
+      <p>
+        These Terms do not waive any copyrights, trademark rights, or other rights relating to TomaToma and related content.
+      </p>
+    </section>
+
+    <section id="definitions">
+      <h2>3. Definitions</h2>
+      <p>For purposes of these Terms, the following terms have the meanings set out below.</p>
+
+      <ul>
+        <li>
+          <strong>“We,” “us,” or “our”</strong> means the party that manages rights relating to TomaToma and related content.
+        </li>
+        <li>
+          <strong>“Character”</strong> means TomaToma and its related characters, names, settings, world, illustrations, logos, and other related elements.
+        </li>
+        <li>
+          <strong>“Eligible Creator”</strong> means an individual creator who satisfies the conditions of these Terms.
+        </li>
+        <li>
+          <strong>“Eligible Goods”</strong> means physical fan-made goods created by an Eligible Creator based on the Character.
+        </li>
+        <li>
+          <strong>“Annual Income”</strong> means income personally received by the Eligible Creator to maintain living expenses, tuition, or other livelihood needs.
+          Income of a spouse, family member, housemate, supporter, or any other third party is not included.
+        </li>
+        <li>
+          <strong>“Annual Sales”</strong> means the total sales amount generated from the sale of Eligible Goods during a calendar year or another 12-month period designated by us.
+          Sales tax, value-added tax, shipping fees, and refunded amounts may be excluded.
+        </li>
+      </ul>
+    </section>
+
+    <section id="eligible">
+      <h2>4. Eligible Creators</h2>
+      <p>
+        These Terms apply to individual creators who understand and agree to our Fan Creation Guidelines and these Terms.
+      </p>
+      <p>
+        Eligible Creators are limited to those who respect the Character and its world and who create and sell Eligible Goods as an extension of fan activity.
+      </p>
+
+      <div class="grid">
+        <div class="mini-card ok">
+          <h3>Examples of Eligible Creators</h3>
+          <ul>
+            <li>Individual fan artists</li>
+            <li>Individual handmade craft creators</li>
+            <li>Art or design students</li>
+            <li>Individuals selling on a small scale to supplement living expenses, tuition, or creative activity costs</li>
+          </ul>
+        </div>
+
+        <div class="mini-card ng">
+          <h3>Examples of Ineligible Parties</h3>
+          <ul>
+            <li>Corporations, organizations, and business operators</li>
+            <li>Agencies, manufacturers, and wholesalers</li>
+            <li>Parties engaging in continuous mass production or mass sales</li>
+            <li>Parties that violate these Terms or the Fan Creation Guidelines</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        Use by corporations, organizations, business operators, agencies, manufacturers, wholesalers, or similar parties is outside the scope of these Terms
+        and requires separate prior permission.
+      </p>
+    </section>
+
+    <section id="territory">
+      <h2>5. Licensed Countries and Sales Territories</h2>
+      <p>
+        Sales under these Terms are permitted only when an Eligible Creator resides in a country or region designated by us as a Licensed Country
+        and sells to that Licensed Country or region.
+      </p>
+      <p>
+        Eligible Creators are responsible for complying with all applicable laws and rules relating to sales, shipping, advertising, payments,
+        import and export, consumer protection, taxation, labeling, safety standards, and similar matters.
+      </p>
+      <p>
+        When selling online, Eligible Creators must take reasonable measures through sales pages, shipping settings, payment settings,
+        or similar means to avoid selling or shipping to countries or regions outside the Licensed Countries designated by us.
+      </p>
+
+      <div class="country-panel">
+        <h3>Licensed Countries / Regions</h3>
+        <ul class="country-list">
+          <li>Afghanistan</li>
+          <li>Albania</li>
+          <li>Algeria</li>
+          <li>Angola</li>
+          <li>Anguilla</li>
+          <li>Antigua and Barbuda</li>
+          <li>Argentina</li>
+          <li>Armenia</li>
+          <li>Australia</li>
+          <li>Austria</li>
+          <li>Azerbaijan</li>
+          <li>Bahamas</li>
+          <li>Bahrain</li>
+          <li>Barbados</li>
+          <li>Belarus</li>
+          <li>Belgium</li>
+          <li>Belize</li>
+          <li>Benin</li>
+          <li>Bermuda</li>
+          <li>Bhutan</li>
+          <li>Bolivia</li>
+          <li>Bosnia and Herzegovina</li>
+          <li>Botswana</li>
+          <li>Brazil</li>
+          <li>British Virgin Islands</li>
+          <li>Brunei</li>
+          <li>Bulgaria</li>
+          <li>Burkina Faso</li>
+          <li>Cambodia</li>
+          <li>Cameroon</li>
+          <li>Canada</li>
+          <li>Cape Verde</li>
+          <li>Cayman Islands</li>
+          <li>Chad</li>
+          <li>Chile</li>
+          <li>China Mainland</li>
+          <li>Colombia</li>
+          <li>Congo, Democratic Republic of the</li>
+          <li>Congo, Republic of the</li>
+          <li>Costa Rica</li>
+          <li>Côte d’Ivoire</li>
+          <li>Croatia</li>
+          <li>Cyprus</li>
+          <li>Czech Republic</li>
+          <li>Denmark</li>
+          <li>Dominica</li>
+          <li>Dominican Republic</li>
+          <li>Ecuador</li>
+          <li>Egypt</li>
+          <li>El Salvador</li>
+          <li>Estonia</li>
+          <li>Eswatini</li>
+          <li>Fiji</li>
+          <li>Finland</li>
+          <li>France</li>
+          <li>Gabon</li>
+          <li>Gambia</li>
+          <li>Georgia</li>
+          <li>Germany</li>
+          <li>Ghana</li>
+          <li>Greece</li>
+          <li>Grenada</li>
+          <li>Guatemala</li>
+          <li>Guinea-Bissau</li>
+          <li>Guyana</li>
+          <li>Honduras</li>
+          <li>Hungary</li>
+          <li>Iceland</li>
+          <li>India</li>
+          <li>Indonesia</li>
+          <li>Iraq</li>
+          <li>Ireland</li>
+          <li>Israel</li>
+          <li>Italy</li>
+          <li>Jamaica</li>
+          <li>Jordan</li>
+          <li>Kazakhstan</li>
+          <li>Kenya</li>
+          <li>Kosovo</li>
+          <li>Kuwait</li>
+          <li>Kyrgyzstan</li>
+          <li>Laos</li>
+          <li>Latvia</li>
+          <li>Lebanon</li>
+          <li>Liberia</li>
+          <li>Libya</li>
+          <li>Lithuania</li>
+          <li>Luxembourg</li>
+          <li>Macao</li>
+          <li>Madagascar</li>
+          <li>Malawi</li>
+          <li>Malaysia</li>
+          <li>Maldives</li>
+          <li>Mali</li>
+          <li>Malta</li>
+          <li>Mauritania</li>
+          <li>Mauritius</li>
+          <li>Mexico</li>
+          <li>Micronesia</li>
+          <li>Moldova</li>
+          <li>Mongolia</li>
+          <li>Montenegro</li>
+          <li>Montserrat</li>
+          <li>Morocco</li>
+          <li>Mozambique</li>
+          <li>Myanmar</li>
+          <li>Namibia</li>
+          <li>Nauru</li>
+          <li>Nepal</li>
+          <li>Netherlands</li>
+          <li>New Zealand</li>
+          <li>Nicaragua</li>
+          <li>Niger</li>
+          <li>Nigeria</li>
+          <li>North Macedonia</li>
+          <li>Norway</li>
+          <li>Oman</li>
+          <li>Pakistan</li>
+          <li>Palau</li>
+          <li>Panama</li>
+          <li>Papua New Guinea</li>
+          <li>Paraguay</li>
+          <li>Peru</li>
+          <li>Philippines</li>
+          <li>Poland</li>
+          <li>Portugal</li>
+          <li>Qatar</li>
+          <li>Romania</li>
+          <li>Russia</li>
+          <li>Rwanda</li>
+          <li>Saint Kitts and Nevis</li>
+          <li>Saint Lucia</li>
+          <li>Saint Vincent and the Grenadines</li>
+          <li>São Tomé and Príncipe</li>
+          <li>Saudi Arabia</li>
+          <li>Senegal</li>
+          <li>Serbia</li>
+          <li>Seychelles</li>
+          <li>Sierra Leone</li>
+          <li>Singapore</li>
+          <li>Slovakia</li>
+          <li>Slovenia</li>
+          <li>Solomon Islands</li>
+          <li>South Africa</li>
+          <li>South Korea</li>
+          <li>Spain</li>
+          <li>Sri Lanka</li>
+          <li>Suriname</li>
+          <li>Sweden</li>
+          <li>Switzerland</li>
+          <li>Taiwan</li>
+          <li>Tajikistan</li>
+          <li>Tanzania</li>
+          <li>Thailand</li>
+          <li>Tonga</li>
+          <li>Trinidad and Tobago</li>
+          <li>Tunisia</li>
+          <li>Turkey</li>
+          <li>Turkmenistan</li>
+          <li>Turks and Caicos Islands</li>
+          <li>Uganda</li>
+          <li>Ukraine</li>
+          <li>United Arab Emirates</li>
+          <li>United Kingdom</li>
+          <li>United States</li>
+          <li>Uruguay</li>
+          <li>Uzbekistan</li>
+          <li>Vanuatu</li>
+          <li>Venezuela</li>
+          <li>Vietnam</li>
+          <li>Yemen</li>
+          <li>Zambia</li>
+          <li>Zimbabwe</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="license">
+      <h2>6. Scope of License</h2>
+      <p>
+        If an Eligible Creator complies with these Terms and the Fan Creation Guidelines, we grant that Eligible Creator a non-exclusive license
+        to use the Character solely to the extent necessary to create and sell Eligible Goods.
+      </p>
+      <p>
+        This license is granted only to the Eligible Creator personally and may not be assigned, lent, transferred, or sublicensed to any third party.
+      </p>
+      <p>
+        This license does not grant the right to sell any item as official merchandise, authorized merchandise, affiliated merchandise, sponsored merchandise,
+        or similar goods.
+      </p>
+    </section>
+
+    <section id="income-sales">
+      <h2>7. Annual Income and Annual Sales</h2>
+      <p>
+        In principle, an individual creator may sell Eligible Goods without prior approval and without paying a license fee if all of the following conditions are met.
+      </p>
+
+      <ul>
+        <li>The Eligible Creator’s personal Annual Income is equivalent to USD 30,000 or less.</li>
+        <li>Annual Sales from Eligible Goods are equivalent to USD 30,000 or less.</li>
+        <li>The Eligible Creator complies with these Terms and the Fan Creation Guidelines.</li>
+      </ul>
+
+      <p>
+        Annual Income and Annual Sales are based on the Eligible Creator’s self-reporting. We do not normally require supporting documents.
+      </p>
+      <p>
+        However, if we suspect false reporting, improper use, large-scale sales, disguised corporate use, or any other use contrary to the purpose of these Terms,
+        we may request reasonable supporting materials.
+      </p>
+    </section>
+
+    <section id="royalty">
+      <h2>8. License Fee for Sales Above the Threshold</h2>
+      <p>
+        If Annual Sales from Eligible Goods exceed the equivalent of USD 30,000, the Eligible Creator must pay us a license fee equal to 10% of the amount exceeding USD 30,000.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Annual Sales</th>
+              <th>Free Allowance</th>
+              <th>Amount Subject to License Fee</th>
+              <th>License Fee</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Equivalent to USD 30,000 or less</td>
+              <td>Up to the equivalent of USD 30,000</td>
+              <td>None</td>
+              <td>Not required</td>
+            </tr>
+            <tr>
+              <td>Equivalent to USD 40,000</td>
+              <td>Up to the equivalent of USD 30,000</td>
+              <td>Excess amount equivalent to USD 10,000</td>
+              <td>Equivalent to USD 1,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Exceeding the equivalent of USD 30,000 in Annual Sales does not immediately constitute a violation of these Terms.
+        However, the Eligible Creator must self-report to us when the excess is recognized or within a reasonable period after the end of the applicable year.
+      </p>
+      <p>
+        Payment method, payment timing, exchange rate, and other necessary matters shall be as separately designated by us.
+      </p>
+    </section>
+
+    <section id="permitted-goods">
+      <h2>9. Goods That May Be Sold</h2>
+      <p>
+        Goods that may be sold under these Terms are limited to physical goods. Examples of Eligible Goods include the following.
+      </p>
+
+      <ul>
+        <li>T-shirts</li>
+        <li>Posters</li>
+        <li>Tapestries</li>
+        <li>Stickers</li>
+        <li>Postcards</li>
+        <li>Art prints</li>
+        <li>Doujinshi and booklets</li>
+        <li>Acrylic keychains</li>
+        <li>Acrylic stands</li>
+        <li>Can badges / pin-back buttons</li>
+        <li>Pins</li>
+        <li>Charms</li>
+        <li>Tote bags</li>
+        <li>Handmade accessories</li>
+        <li>Ceramics, woodcrafts, and fabric goods</li>
+        <li>Other items that we consider appropriate as small-scale fan-made goods</li>
+      </ul>
+
+      <p>
+        Even if an item falls within the examples above, it may not be sold if it may be mistaken for official merchandise,
+        violates these Terms or the Fan Creation Guidelines, or is otherwise deemed inappropriate by us.
+      </p>
+    </section>
+
+    <section id="prohibited-goods">
+      <h2>10. Goods That May Not Be Sold</h2>
+      <p>
+        The following goods may not be sold under these Terms. Separate prior permission is required if you wish to sell such goods.
+      </p>
+
+      <h3>10.1 Digital Products</h3>
+      <ul>
+        <li>Digital products, downloadable products, and digital data</li>
+        <li>E-books, PDFs, image data, wallpapers, and icon assets</li>
+        <li>Stickers, emotes, streaming assets, templates, and asset packs</li>
+        <li>3D models, 3D printing data, Live2D models, VRM models, and avatars</li>
+        <li>Games, apps, mods, and plugins</li>
+        <li>NFTs and blockchain-related products</li>
+        <li>AI training data, AI models, LoRAs, and prompt collections</li>
+        <li>Other similar items</li>
+      </ul>
+
+      <p>
+        This section does not prohibit non-commercial posting of fan art or fan works on social media or similar platforms within the scope of the Fan Creation Guidelines.
+      </p>
+
+      <h3>10.2 Children’s Products</h3>
+      <ul>
+        <li>Toys for children</li>
+        <li>Children’s clothing</li>
+        <li>Children’s accessories</li>
+        <li>School supplies</li>
+        <li>Infant products and baby products</li>
+        <li>Children’s tableware, bedding, and daily-use goods</li>
+        <li>Other products primarily intended for use by infants, minors, or children</li>
+      </ul>
+
+      <p>
+        T-shirts may be sold, but children’s sizes, infant sizes, or sales primarily targeting children are prohibited.
+      </p>
+
+      <h3>10.3 Goods with High Safety or Regulatory Risk</h3>
+      <ul>
+        <li>Plush toys, dolls, figures, toys, and other similar three-dimensional goods</li>
+        <li>Food and beverages</li>
+        <li>Cosmetics and fragrances</li>
+        <li>Medicines, quasi-drugs, and supplements</li>
+        <li>Electrical products and electronic devices</li>
+        <li>Items involving fire, blades, hazardous materials, or chemicals</li>
+        <li>Items that may harm humans, animals, or the environment</li>
+        <li>Other goods subject to special legal regulation, safety standards, labeling obligations, or similar requirements</li>
+      </ul>
+
+      <p>
+        Plush toys and other three-dimensional goods may be added to the permitted scope in the future under separately specified conditions.
+      </p>
+    </section>
+
+    <section id="production-method">
+      <h2>11. Production and Sales Methods</h2>
+      <p>
+        Eligible Creators may use print shops, processors, or manufacturers for small-scale production.
+      </p>
+      <p>
+        However, continuous mass production, inventory-free sales, dropshipping, automated made-to-order production and sales,
+        mass sales through third-party platforms, and similar sales methods are prohibited.
+      </p>
+      <p>
+        Eligible Creators must not state or imply on sales pages, product descriptions, packaging, social media posts, or similar materials
+        that Eligible Goods are official merchandise, authorized merchandise, affiliated merchandise, sponsored merchandise, or similar goods.
+      </p>
+    </section>
+
+    <section id="credit">
+      <h2>12. Notices and Credit</h2>
+      <p>
+        Eligible Creators should, wherever reasonably possible, include the following notice on the Eligible Goods themselves,
+        backing cards, packaging, tags, instructions, or sales pages.
+      </p>
+
+      <div class="credit-box">
+        Fan-made item. Not official merchandise.<br />
+        © 2026 TomaToma. All Rights Reserved.
+      </div>
+
+      <p>
+        If you wish to make the rights holder or brand name clearer, the following notice may also be used.
+      </p>
+
+      <div class="credit-box">
+        © 2026 TomaToma / Mackerelish. All Rights Reserved.
+      </div>
+    </section>
+
+    <section id="environment">
+      <h2>13. Materials and Environmental Considerations</h2>
+      <p>
+        Eligible Creators should, wherever reasonably possible, choose materials with lower environmental impact, recycled materials,
+        reusable materials, recyclable materials, or materials derived from renewable resources.
+      </p>
+      <p>
+        Eligible Creators should also avoid excessive packaging and reduce the use of single-use plastics wherever reasonably possible.
+      </p>
+      <p>
+        If using claims such as “biodegradable,” “compostable,” or “returns to nature,” Eligible Creators must ensure that such claims are supported
+        by appropriate evidence, certification, and applicable laws, and do not mislead purchasers.
+      </p>
+    </section>
+
+    <section id="prohibited-conduct">
+      <h2>14. Prohibited Conduct</h2>
+      <p>Eligible Creators must not engage in any of the following conduct.</p>
+
+      <ul>
+        <li>Conduct that violates these Terms or the Fan Creation Guidelines</li>
+        <li>Conduct that may cause confusion with official merchandise, authorized merchandise, affiliated merchandise, or sponsored merchandise</li>
+        <li>Commercializing official illustrations, images, logos, assets, or similar materials as-is or with only minor modifications</li>
+        <li>Infringing third-party copyrights, trademarks, portrait rights, reputation, privacy, or other rights</li>
+        <li>Use for the purpose of promoting, soliciting, or inciting political, religious, ideological, or social movement activities</li>
+        <li>Antisocial, violent, discriminatory, threatening, or harassment-related use</li>
+        <li>Use that violates laws, regulations, or public order and morals</li>
+        <li>Use that damages the reputation or image of us, the Character, the work, or the fan community</li>
+        <li>False reporting, improper sales, concealment of sales, disguised corporate use, or other conduct contrary to the purpose of these Terms</li>
+      </ul>
+    </section>
+
+    <section id="reporting">
+      <h2>15. Self-Reporting, Reports, and Payment</h2>
+      <p>
+        An Eligible Creator whose Annual Sales from Eligible Goods exceed the equivalent of USD 30,000 must self-report to us
+        when the excess is recognized or within a reasonable period after the end of the applicable year.
+      </p>
+      <p>
+        To calculate the license fee or confirm compliance with these Terms, we may request information such as sales amounts,
+        sales periods, sales territories, and summaries of the goods sold.
+      </p>
+      <p>
+        Payment method, payment deadline, currency, exchange rate, and other necessary matters shall be determined through discussion with the Eligible Creator
+        or by a method separately designated by us.
+      </p>
+    </section>
+
+    <section id="suspension">
+      <h2>16. Suspension of Sales and Revocation of License</h2>
+      <p>
+        If we determine that any Eligible Goods or any conduct by an Eligible Creator violates these Terms or the Fan Creation Guidelines,
+        we may request suspension of sales, deletion of sales pages, correction of notices, suspension of this license, or revocation of this license,
+        with or without disclosing the reason.
+      </p>
+      <p>
+        Eligible Creators must promptly comply with any such request from us.
+      </p>
+      <p>
+        If any goods are identical or substantially similar to merchandise that we officially sell or plan to sell,
+        we may request suspension or restriction of sales at our discretion.
+      </p>
+    </section>
+
+    <section id="liability">
+      <h2>17. Responsibility and Disclaimer</h2>
+      <p>
+        Eligible Creators are solely responsible for the quality, safety, labeling, descriptions, sales, shipping, returns, refunds,
+        purchaser support, taxation, legal compliance, and all other matters relating to their Eligible Goods.
+      </p>
+      <p>
+        We are not responsible for any disputes, damages, accidents, or other issues that arise between an Eligible Creator and purchasers,
+        third parties, sales platforms, government authorities, or any other party in connection with Eligible Goods.
+      </p>
+      <p>
+        If an Eligible Creator’s goods or sales activities cause damage to us or any third party,
+        the Eligible Creator must resolve the matter at their own responsibility and expense.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>18. Changes to These Terms</h2>
+      <p>
+        We may change these Terms without prior notice when necessary.
+      </p>
+      <p>
+        Revised Terms become effective when published by us. Eligible Creators must always review the latest version of these Terms before making sales.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>19. Contact</h2>
+      <p>
+        Please use the contact form below for inquiries about these Terms, requests for separate permission,
+        or self-reporting when Annual Sales exceed the threshold.
+      </p>
+      <p>
+        Contact:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSejtHmw7IOlF52pmQCSWizEMwxTyTQ-Nzdc-nG6dwPHLbxNJA/viewform?usp=publish-editor">Contact Form</a>
+      </p>
+      <p>
+        We may not be able to respond to every inquiry. If we do not respond individually, that does not mean that we have permitted any use that violates these Terms.
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2026 TomaToma. All Rights Reserved.</p>
+      <p>Fan-Made Goods Sales License Terms</p>
+    </footer>
+  </main>
+</body>
+</html>

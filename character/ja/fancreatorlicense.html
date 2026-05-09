@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ファン制作物販売ライセンス規約 | TomaToma</title>
+  <meta
+    name="description"
+    content="TomaTomaのIPを利用した個人クリエイター向けファン制作物販売ライセンス規約です。"
+  />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #4f46e5;
+      --accent-bg: #eef2ff;
+      --success: #047857;
+      --success-bg: #ecfdf5;
+      --warning: #92400e;
+      --warning-bg: #fffbeb;
+      --danger: #b91c1c;
+      --danger-bg: #fef2f2;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Hiragino Sans",
+        "Hiragino Kaku Gothic ProN",
+        "Noto Sans JP",
+        Meiryo,
+        sans-serif;
+      line-height: 1.85;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .hero {
+      padding: 42px 32px;
+      background: linear-gradient(135deg, #ffffff, #eef2ff);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .hero__label {
+      display: inline-block;
+      padding: 4px 12px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .notice,
+    .summary,
+    .warning-box {
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      border-radius: var(--radius);
+      border: 1px solid #c7d2fe;
+      background: var(--accent-bg);
+    }
+
+    .notice p,
+    .summary p,
+    .warning-box p {
+      margin: 0;
+    }
+
+    .summary {
+      border-color: #a7f3d0;
+      background: var(--success-bg);
+    }
+
+    .summary strong {
+      color: var(--success);
+    }
+
+    .warning-box {
+      border-color: #fde68a;
+      background: var(--warning-bg);
+    }
+
+    .warning-box strong {
+      color: var(--warning);
+    }
+
+    .toc {
+      padding: 24px;
+      margin-bottom: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 1.4em;
+    }
+
+    .toc li {
+      margin: 4px 0;
+    }
+
+    section {
+      padding: 28px;
+      margin-bottom: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.45rem;
+      line-height: 1.4;
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 14px;
+      padding-left: 1.4em;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .mini-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #f9fafb;
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+    }
+
+    .ok {
+      border-color: #a7f3d0;
+      background: var(--success-bg);
+    }
+
+    .ng {
+      border-color: #fecaca;
+      background: var(--danger-bg);
+    }
+
+    .ng h3,
+    .danger strong {
+      color: var(--danger);
+    }
+
+    .example,
+    .credit-box {
+      padding: 14px 16px;
+      margin: 14px 0;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-bg);
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .credit-box {
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      font-size: 0.95rem;
+      font-weight: 500;
+      overflow-x: auto;
+      white-space: normal;
+    }
+
+    .danger {
+      padding: 16px 18px;
+      margin: 16px 0;
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      background: var(--danger-bg);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f9fafb;
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .country-table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .country-table {
+      width: 100%;
+      min-width: 0;
+      border-collapse: collapse;
+      background: #ffffff;
+    }
+
+    .country-table td {
+      width: 33.333%;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      vertical-align: top;
+      word-break: keep-all;
+    }
+
+    .country-table td:last-child {
+      border-right: 0;
+    }
+
+    .country-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding: 28px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 20px, 980px);
+        padding-top: 20px;
+      }
+
+      .hero,
+      section,
+      .toc {
+        padding: 22px 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .country-table td {
+        display: block;
+        width: 100%;
+        border-right: 0;
+      }
+
+      .country-table tr:last-child td:not(:last-child) {
+        border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero__label">Fan-made Goods License</div>
+      <h1>TomaToma ファン制作物販売ライセンス規約</h1>
+      <p class="lead">
+        本規約は、TomaTomaを愛し、その世界観を尊重する個人クリエイターが、
+        ファン活動の延長として物理的な制作物を小規模に販売できるようにするためのルールです。
+      </p>
+      <p class="meta">
+        制定日：2026/05/09 / 最終更新日：2026/05/09
+      </p>
+    </header>
+
+    <div class="notice">
+      <p>
+        本規約は、TomaTomaの「二次創作ガイドライン」と併せて適用されます。
+        本規約に明記されていない事項については、二次創作ガイドラインが適用されます。
+      </p>
+    </div>
+
+    <div class="summary">
+      <p>
+        <strong>要約：</strong>
+        条件を満たす個人クリエイターは、事前許可およびライセンス料なしで、
+        物理的なファン制作物を販売できます。対象制作物による年間売上が30,000米ドル相当を超えた場合は、
+        超過部分について10%のライセンス料をお支払いいただきます。
+      </p>
+    </div>
+
+    <div class="warning-box">
+      <p>
+        <strong>重要：</strong>
+        デジタル製品、子ども向け商品、ぬいぐるみ、人形、フィギュア、玩具、食品、化粧品、
+        NFT、AI関連商品等は、本規約に基づく販売対象外です。
+      </p>
+    </div>
+
+    <nav class="toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#purpose">目的</a></li>
+        <li><a href="#relation">二次創作ガイドラインとの関係</a></li>
+        <li><a href="#definitions">定義</a></li>
+        <li><a href="#eligible">対象者</a></li>
+        <li><a href="#territory">対象国・販売地域</a></li>
+        <li><a href="#license">許諾内容</a></li>
+        <li><a href="#income-sales">年間所得・年間売上</a></li>
+        <li><a href="#royalty">売上超過時のライセンス料</a></li>
+        <li><a href="#permitted-goods">販売できる制作物</a></li>
+        <li><a href="#prohibited-goods">販売できない制作物</a></li>
+        <li><a href="#production-method">制作方法・販売方法</a></li>
+        <li><a href="#credit">表示・クレジット</a></li>
+        <li><a href="#environment">素材・環境配慮</a></li>
+        <li><a href="#prohibited-conduct">禁止行為</a></li>
+        <li><a href="#reporting">自己申告・報告・支払い</a></li>
+        <li><a href="#suspension">販売停止・許諾取消</a></li>
+        <li><a href="#liability">責任・免責</a></li>
+        <li><a href="#changes">規約の変更</a></li>
+        <li><a href="#contact">問い合わせ</a></li>
+      </ol>
+    </nav>
+
+    <section id="purpose">
+      <h2>1. 目的</h2>
+      <p>
+        本規約は、TomaTomaを愛し、その世界観を尊重する個人クリエイターが、
+        生活費、学費、創作活動費等を補う範囲で、小規模なファン制作物を販売できるようにすることを目的とします。
+      </p>
+      <p>
+        当方は、ファンの皆さまによる創作活動を尊重します。
+        一方で、TomaTomaのイメージ、世界観、ブランド、第三者の権利、購入者の安全を守るため、
+        本規約に定める条件に反する利用を禁止します。
+      </p>
+    </section>
+
+    <section id="relation">
+      <h2>2. 二次創作ガイドラインとの関係</h2>
+      <p>
+        本規約は、TomaTomaの二次創作ガイドラインとは別に、
+        ファン制作物の販売について定めるものです。
+      </p>
+      <p>
+        対象者は、本規約に加えて、二次創作ガイドラインを遵守する必要があります。
+        本規約と二次創作ガイドラインの内容が矛盾する場合、販売に関する事項については本規約が優先して適用されます。
+      </p>
+      <p>
+        本規約は、TomaTomaおよび関連コンテンツに関する著作権、商標権、
+        その他一切の権利を放棄するものではありません。
+      </p>
+    </section>
+
+    <section id="definitions">
+      <h2>3. 定義</h2>
+      <p>本規約において、以下の用語は次の意味を有します。</p>
+
+      <ul>
+        <li>
+          <strong>「当方」</strong>とは、TomaTomaおよび関連コンテンツに関する権利を管理する者をいいます。
+        </li>
+        <li>
+          <strong>「本キャラクター」</strong>とは、TomaTomaおよびその関連キャラクター、名称、設定、世界観、イラスト、ロゴその他関連要素をいいます。
+        </li>
+        <li>
+          <strong>「対象者」</strong>とは、本規約の条件を満たす個人クリエイターをいいます。
+        </li>
+        <li>
+          <strong>「対象制作物」</strong>とは、対象者が本キャラクターをもとに創作した、物理的なファン制作物をいいます。
+        </li>
+        <li>
+          <strong>「年間所得」</strong>とは、対象者本人が生活費、学費その他の生計を維持するために得る収入をいいます。
+          配偶者、家族、同居人、扶養者その他第三者の収入は含みません。
+        </li>
+        <li>
+          <strong>「年間売上」</strong>とは、対象制作物の販売により、暦年または当方が指定する12か月間に発生した販売金額の合計をいいます。
+          消費税、付加価値税、送料、返金済み金額は除外することができます。
+        </li>
+      </ul>
+    </section>
+
+    <section id="eligible">
+      <h2>4. 対象者</h2>
+      <p>
+        本規約の対象者は、当方の二次創作ガイドラインおよび本規約を理解し、これに同意した個人クリエイターとします。
+      </p>
+      <p>
+        対象者は、本キャラクターおよびその世界観を尊重し、ファン活動の延長として対象制作物を制作・販売する者に限ります。
+      </p>
+
+      <div class="grid">
+        <div class="mini-card ok">
+          <h3>対象となる例</h3>
+          <ul>
+            <li>個人のファンアーティスト</li>
+            <li>個人のハンドメイド作家</li>
+            <li>美術系・芸術系の学生</li>
+            <li>生活費、学費、創作活動費を補うために小規模販売を行う個人</li>
+          </ul>
+        </div>
+
+        <div class="mini-card ng">
+          <h3>対象外となる例</h3>
+          <ul>
+            <li>法人、団体、事業者</li>
+            <li>代理店、製造業者、卸売業者</li>
+            <li>継続的な量産販売を行う者</li>
+            <li>本規約または二次創作ガイドラインに反する者</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        法人、団体、事業者、代理店、製造業者、卸売業者、またはこれらに準ずる者による利用は、
+        本規約の対象外とし、事前の個別許諾を必要とします。
+      </p>
+    </section>
+
+    <section id="territory">
+      <h2>5. 対象国・販売地域</h2>
+      <p>
+        本規約に基づく販売は、当方が別途指定する販売対象国に居住する対象者が、
+        当該販売対象国に向けて行う場合に限り認められます。
+      </p>
+      <p>
+        対象者は、販売、発送、広告、決済、輸出入、消費者保護、税務、表示、安全基準その他適用される法令を、
+        自らの責任で遵守するものとします。
+      </p>
+      <p>
+        オンライン販売を行う場合、対象者は、販売ページ、配送設定、決済設定等により、
+        当方が指定する販売対象国以外への販売・発送を行わないよう合理的な措置を講じるものとします。
+      </p>
+      <div class="country-table-wrap" aria-label="販売対象国一覧">
+        <table class="country-table">
+          <tbody>
+            <tr>
+              <td>アイスランド</td>
+              <td>コロンビア</td>
+              <td>パプアニューギニア</td>
+            </tr>
+            <tr>
+              <td>アイルランド</td>
+              <td>コンゴ共和国</td>
+              <td>パラオ</td>
+            </tr>
+            <tr>
+              <td>アゼルバイジャン</td>
+              <td>コンゴ民主共和国</td>
+              <td>パラグアイ</td>
+            </tr>
+            <tr>
+              <td>アフガニスタン</td>
+              <td>コートジボワール</td>
+              <td>フィジー</td>
+            </tr>
+            <tr>
+              <td>アメリカ合衆国</td>
+              <td>サウジアラビア</td>
+              <td>フィリピン</td>
+            </tr>
+            <tr>
+              <td>アラブ首長国連邦</td>
+              <td>サントメ・プリンシペ</td>
+              <td>フィンランド</td>
+            </tr>
+            <tr>
+              <td>アルジェリア</td>
+              <td>ザンビア</td>
+              <td>フランス</td>
+            </tr>
+            <tr>
+              <td>アルゼンチン</td>
+              <td>シエラレオネ</td>
+              <td>ブルガリア</td>
+            </tr>
+            <tr>
+              <td>アルバニア</td>
+              <td>シンガポール</td>
+              <td>ブルキナファソ</td>
+            </tr>
+            <tr>
+              <td>アルメニア</td>
+              <td>ジャマイカ</td>
+              <td>ブルネイ</td>
+            </tr>
+            <tr>
+              <td>アンギラ</td>
+              <td>ジンバブエ</td>
+              <td>ブータン</td>
+            </tr>
+            <tr>
+              <td>アンゴラ</td>
+              <td>スイス</td>
+              <td>ベトナム</td>
+            </tr>
+            <tr>
+              <td>アンティグア・バーブーダ</td>
+              <td>スウェーデン</td>
+              <td>ベナン</td>
+            </tr>
+            <tr>
+              <td>イエメン</td>
+              <td>スペイン</td>
+              <td>ベネズエラ</td>
+            </tr>
+            <tr>
+              <td>イギリス</td>
+              <td>スリナム</td>
+              <td>ベラルーシ</td>
+            </tr>
+            <tr>
+              <td>イギリス領ヴァージン諸島</td>
+              <td>スリランカ</td>
+              <td>ベリーズ</td>
+            </tr>
+            <tr>
+              <td>イスラエル</td>
+              <td>スロバキア</td>
+              <td>ベルギー</td>
+            </tr>
+            <tr>
+              <td>イタリア</td>
+              <td>スロベニア</td>
+              <td>ペルー</td>
+            </tr>
+            <tr>
+              <td>イラク</td>
+              <td>セネガル</td>
+              <td>ホンジュラス</td>
+            </tr>
+            <tr>
+              <td>インド</td>
+              <td>セルビア</td>
+              <td>ボスニア･ヘルツェゴビナ</td>
+            </tr>
+            <tr>
+              <td>インドネシア</td>
+              <td>セントクリストファー・ネイビス</td>
+              <td>ボツワナ</td>
+            </tr>
+            <tr>
+              <td>ウガンダ</td>
+              <td>セントビンセント・グレナディーン</td>
+              <td>ボリビア</td>
+            </tr>
+            <tr>
+              <td>ウクライナ</td>
+              <td>セントルシア</td>
+              <td>ポルトガル</td>
+            </tr>
+            <tr>
+              <td>ウズベキスタン</td>
+              <td>セーシェル</td>
+              <td>ポーランド</td>
+            </tr>
+            <tr>
+              <td>ウルグアイ</td>
+              <td>ソロモン諸島</td>
+              <td>マカオ</td>
+            </tr>
+            <tr>
+              <td>エクアドル</td>
+              <td>タイ</td>
+              <td>マダガスカル</td>
+            </tr>
+            <tr>
+              <td>エジプト</td>
+              <td>タジキスタン</td>
+              <td>マラウイ</td>
+            </tr>
+            <tr>
+              <td>エストニア</td>
+              <td>タンザニア</td>
+              <td>マリ</td>
+            </tr>
+            <tr>
+              <td>エスワティニ</td>
+              <td>タークス・カイコス諸島</td>
+              <td>マルタ</td>
+            </tr>
+            <tr>
+              <td>エルサルバドル</td>
+              <td>チェコ共和国</td>
+              <td>マレーシア</td>
+            </tr>
+            <tr>
+              <td>オマーン</td>
+              <td>チャド</td>
+              <td>ミクロネシア</td>
+            </tr>
+            <tr>
+              <td>オランダ</td>
+              <td>チュニジア</td>
+              <td>ミャンマー</td>
+            </tr>
+            <tr>
+              <td>オーストラリア</td>
+              <td>チリ</td>
+              <td>メキシコ</td>
+            </tr>
+            <tr>
+              <td>オーストリア</td>
+              <td>デンマーク</td>
+              <td>モザンビーク</td>
+            </tr>
+            <tr>
+              <td>カザフスタン</td>
+              <td>トリニダード・トバゴ</td>
+              <td>モルディブ</td>
+            </tr>
+            <tr>
+              <td>カタール</td>
+              <td>トルクメニスタン</td>
+              <td>モルドバ</td>
+            </tr>
+            <tr>
+              <td>カナダ</td>
+              <td>トルコ</td>
+              <td>モロッコ</td>
+            </tr>
+            <tr>
+              <td>カメルーン</td>
+              <td>トンガ</td>
+              <td>モンゴル</td>
+            </tr>
+            <tr>
+              <td>カンボジア</td>
+              <td>ドイツ</td>
+              <td>モンテネグロ</td>
+            </tr>
+            <tr>
+              <td>カーボベルデ</td>
+              <td>ドミニカ</td>
+              <td>モントセラト</td>
+            </tr>
+            <tr>
+              <td>ガイアナ</td>
+              <td>ドミニカ共和国</td>
+              <td>モーリシャス</td>
+            </tr>
+            <tr>
+              <td>ガボン</td>
+              <td>ナイジェリア</td>
+              <td>モーリタニア</td>
+            </tr>
+            <tr>
+              <td>ガンビア</td>
+              <td>ナウル</td>
+              <td>ヨルダン</td>
+            </tr>
+            <tr>
+              <td>ガーナ</td>
+              <td>ナミビア</td>
+              <td>ラオス</td>
+            </tr>
+            <tr>
+              <td>キプロス</td>
+              <td>ニカラグア</td>
+              <td>ラトビア</td>
+            </tr>
+            <tr>
+              <td>キルギスタン</td>
+              <td>ニジェール</td>
+              <td>リトアニア</td>
+            </tr>
+            <tr>
+              <td>ギニアビサウ</td>
+              <td>ニュージーランド</td>
+              <td>リビア</td>
+            </tr>
+            <tr>
+              <td>ギリシャ</td>
+              <td>ネパール</td>
+              <td>リベリア</td>
+            </tr>
+            <tr>
+              <td>クウェート</td>
+              <td>ノルウェー</td>
+              <td>ルクセンブルグ</td>
+            </tr>
+            <tr>
+              <td>クロアチア</td>
+              <td>ハンガリー</td>
+              <td>ルワンダ</td>
+            </tr>
+            <tr>
+              <td>グアテマラ</td>
+              <td>バヌアツ</td>
+              <td>ルーマニア</td>
+            </tr>
+            <tr>
+              <td>グルジア</td>
+              <td>バハマ</td>
+              <td>レバノン</td>
+            </tr>
+            <tr>
+              <td>グレナダ</td>
+              <td>バルバドス</td>
+              <td>ロシア</td>
+            </tr>
+            <tr>
+              <td>ケイマン諸島</td>
+              <td>バーミューダ</td>
+              <td>中国本土</td>
+            </tr>
+            <tr>
+              <td>ケニア</td>
+              <td>バーレーン</td>
+              <td>北マケドニア</td>
+            </tr>
+            <tr>
+              <td>コスタリカ</td>
+              <td>パキスタン</td>
+              <td>南アフリカ</td>
+            </tr>
+            <tr>
+              <td>コソボ</td>
+              <td>パナマ</td>
+              <td>台湾</td>
+            </tr>
+            <tr>
+              <td>大韓民国</td>
+              <td>ブラジル</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="license">
+      <h2>6. 許諾内容</h2>
+      <p>
+        対象者が本規約および二次創作ガイドラインを遵守する場合、当方は、対象者に対し、
+        対象制作物を制作し、販売するために必要な範囲で、本キャラクターを利用することを非独占的に許諾します。
+      </p>
+      <p>
+        本許諾は、対象者本人にのみ認められるものであり、第三者に譲渡、貸与、再許諾することはできません。
+      </p>
+      <p>
+        本許諾は、公式商品、公認商品、提携商品、協賛商品として販売する権利を与えるものではありません。
+      </p>
+    </section>
+
+    <section id="income-sales">
+      <h2>7. 年間所得・年間売上</h2>
+      <p>
+        本規約に基づき、当方への事前許可およびライセンス料の支払いなく販売できる対象者は、
+        原則として以下のすべてを満たす個人クリエイターとします。
+      </p>
+
+      <ul>
+        <li>対象者本人の年間所得が30,000米ドル相当以下であること</li>
+        <li>対象制作物による年間売上が30,000米ドル相当以下であること</li>
+        <li>本規約および二次創作ガイドラインを遵守していること</li>
+      </ul>
+
+      <p>
+        年間所得および年間売上は、対象者の自己申告に基づくものとします。
+        当方は通常、証明書類の提出を求めません。
+      </p>
+      <p>
+        ただし、虚偽申告、不正利用、大規模販売、法人利用、その他本規約の趣旨に反する利用が疑われる場合、
+        当方は合理的な範囲で確認資料の提出を求めることがあります。
+      </p>
+    </section>
+
+    <section id="royalty">
+      <h2>8. 売上超過時のライセンス料</h2>
+      <p>
+        対象制作物による年間売上が30,000米ドル相当を超えた場合、
+        対象者は、当該超過部分について10%のライセンス料を当方に支払うものとします。
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>年間売上</th>
+              <th>無償枠</th>
+              <th>ライセンス料の対象</th>
+              <th>ライセンス料</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>30,000米ドル相当以下</td>
+              <td>30,000米ドル相当まで</td>
+              <td>なし</td>
+              <td>不要</td>
+            </tr>
+            <tr>
+              <td>40,000米ドル相当</td>
+              <td>30,000米ドル相当まで</td>
+              <td>超過分10,000米ドル相当</td>
+              <td>1,000米ドル相当</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        年間売上が30,000米ドル相当を超えた場合であっても、直ちに本規約違反となるものではありません。
+        ただし、対象者は、超過を認識した時点、または当該年の終了後合理的な期間内に、
+        当方に対して自己申告を行うものとします。
+      </p>
+      <p>
+        支払い方法、支払い時期、換算レートその他必要な事項は、当方が別途指定する方法によるものとします。
+      </p>
+    </section>
+
+    <section id="permitted-goods">
+      <h2>9. 販売できる制作物</h2>
+      <p>
+        本規約に基づき販売できる対象制作物は、物理的な制作物に限ります。
+        対象制作物の例は以下のとおりです。
+      </p>
+
+      <ul>
+        <li>Tシャツ</li>
+        <li>ポスター</li>
+        <li>タペストリー</li>
+        <li>ステッカー</li>
+        <li>ポストカード</li>
+        <li>アートプリント</li>
+        <li>同人誌、冊子</li>
+        <li>アクリルキーホルダー</li>
+        <li>アクリルスタンド</li>
+        <li>缶バッジ</li>
+        <li>ピンバッジ</li>
+        <li>チャーム</li>
+        <li>トートバッグ</li>
+        <li>手作りアクセサリー</li>
+        <li>陶器、木工、布小物</li>
+        <li>その他、当方が小規模なファン制作物として適切と判断する物品</li>
+      </ul>
+
+      <p>
+        上記に含まれる制作物であっても、公式商品と誤認されるもの、
+        本規約または二次創作ガイドラインに反するもの、当方が不適切と判断するものは販売できません。
+      </p>
+    </section>
+
+    <section id="prohibited-goods">
+      <h2>10. 販売できない制作物</h2>
+      <p>
+        以下の制作物は、本規約に基づく販売を禁止します。
+        販売を希望する場合は、事前の個別許諾が必要です。
+      </p>
+
+      <h3>10.1 デジタル製品</h3>
+      <ul>
+        <li>デジタル製品、ダウンロード商品、デジタルデータ</li>
+        <li>電子書籍、PDF、画像データ、壁紙、アイコン素材</li>
+        <li>スタンプ、エモート、配信用素材、テンプレート、素材集</li>
+        <li>3Dモデル、3Dプリント用データ、Live2Dモデル、VRMモデル、アバター</li>
+        <li>ゲーム、アプリ、MOD、プラグイン</li>
+        <li>NFT、ブロックチェーン関連商品</li>
+        <li>AI学習用データ、AIモデル、LoRA、プロンプト集</li>
+        <li>その他これらに類するもの</li>
+      </ul>
+
+      <p>
+        なお、二次創作ガイドラインの範囲内で、非営利のファンアートや作品をSNS等に投稿することは、
+        本項によって禁止されるものではありません。
+      </p>
+
+      <h3>10.2 子ども向け商品</h3>
+      <ul>
+        <li>子ども向け玩具</li>
+        <li>子ども向け衣類</li>
+        <li>子ども向けアクセサリー</li>
+        <li>学用品</li>
+        <li>乳幼児用品、ベビー用品</li>
+        <li>子ども向け食器、寝具、日用品</li>
+        <li>その他、乳幼児、児童、子どもの使用を主目的とする商品</li>
+      </ul>
+
+      <p>
+        Tシャツの販売は可能ですが、子ども向けサイズ、乳幼児向けサイズ、
+        または子どもを主な対象とする販売は禁止します。
+      </p>
+
+      <h3>10.3 安全性・規制リスクが高い商品</h3>
+      <ul>
+        <li>ぬいぐるみ、人形、フィギュア、玩具その他これらに類する立体物</li>
+        <li>食品、飲料</li>
+        <li>化粧品、香水</li>
+        <li>医薬品、医薬部外品、サプリメント</li>
+        <li>電気製品、電子機器</li>
+        <li>火気、刃物、危険物、薬品を含むもの</li>
+        <li>人体、動物、環境に害を及ぼすおそれのあるもの</li>
+        <li>その他、法令上特別な規制、安全基準、表示義務等が関係する商品</li>
+      </ul>
+
+      <p>
+        ぬいぐるみその他の立体物については、将来的に条件を定めたうえで、
+        別途許諾対象に追加する場合があります。
+      </p>
+    </section>
+
+    <section id="production-method">
+      <h2>11. 制作方法・販売方法</h2>
+      <p>
+        対象者は、小規模な制作のために、印刷所、加工業者、製造業者を利用することができます。
+      </p>
+      <p>
+        ただし、継続的な大量生産、無在庫販売、ドロップシッピング、受注ごとの自動製造販売、
+        第三者プラットフォームを利用した量産販売、またはこれらに類する販売方法は禁止します。
+      </p>
+      <p>
+        対象者は、販売ページ、商品説明、パッケージ、SNS投稿等において、
+        対象制作物が公式商品、公認商品、提携商品、協賛商品であるかのような表示をしてはなりません。
+      </p>
+    </section>
+
+    <section id="credit">
+      <h2>12. 表示・クレジット</h2>
+      <p>
+        対象者は、可能な限り、対象制作物本体、台紙、パッケージ、タグ、説明書、販売ページのいずれかに、
+        以下の表示を行うものとします。
+      </p>
+
+      <div class="credit-box">
+        本作品はファンによる制作物であり、公式商品ではありません。<br />
+        © 2026 TomaToma. All Rights Reserved.
+      </div>
+
+      <p>
+        英語で表示する場合は、以下の表記を使用できます。
+      </p>
+
+      <div class="credit-box">
+        Fan-made item. Not official merchandise.<br />
+        © 2026 TomaToma. All Rights Reserved.
+      </div>
+
+      <p>
+        権利者名やブランド名を明確にしたい場合は、以下のような表記も可能です。
+      </p>
+
+      <div class="credit-box">
+        © 2026 TomaToma / Mackerelish. All Rights Reserved.
+      </div>
+    </section>
+
+    <section id="environment">
+      <h2>13. 素材・環境配慮</h2>
+      <p>
+        対象者は、可能な範囲で、環境負荷の低い素材、再生素材、再利用可能な素材、
+        リサイクル可能な素材、再生可能資源に由来する素材を選択するよう努めるものとします。
+      </p>
+      <p>
+        また、過剰包装を避け、使い捨てプラスチックの使用をできる限り控えるよう努めるものとします。
+      </p>
+      <p>
+        「生分解性」「コンポスト可能」「自然に還元できる」等の表示を行う場合は、
+        適切な根拠、認証、法令に基づき、購入者に誤認を与えないようにしてください。
+      </p>
+    </section>
+
+    <section id="prohibited-conduct">
+      <h2>14. 禁止行為</h2>
+      <p>対象者は、以下の行為をしてはなりません。</p>
+
+      <ul>
+        <li>本規約または二次創作ガイドラインに反する行為</li>
+        <li>公式商品、公認商品、提携商品、協賛商品であるかのように誤認させる行為</li>
+        <li>公式イラスト、画像、ロゴ、素材等をそのまま使用し、または軽微な加工のみで商品化する行為</li>
+        <li>第三者の著作権、商標権、肖像権、名誉、プライバシーその他の権利を侵害する行為</li>
+        <li>政治活動、宗教活動、思想活動、社会運動の宣伝、勧誘、扇動を目的とする利用</li>
+        <li>反社会的、暴力的、差別的、脅迫的、嫌がらせ目的の利用</li>
+        <li>法令または公序良俗に反する利用</li>
+        <li>当方、本キャラクター、作品、ファンコミュニティの信用またはイメージを損なう利用</li>
+        <li>虚偽申告、不正販売、売上隠し、法人利用の偽装その他本規約の趣旨に反する行為</li>
+      </ul>
+    </section>
+
+    <section id="reporting">
+      <h2>15. 自己申告・報告・支払い</h2>
+      <p>
+        対象制作物による年間売上が30,000米ドル相当を超えた対象者は、
+        超過を認識した時点、または当該年の終了後合理的な期間内に、当方に自己申告を行うものとします。
+      </p>
+      <p>
+        当方は、ライセンス料の計算または本規約の遵守確認に必要な範囲で、
+        対象制作物の売上額、販売期間、販売地域、販売物の概要等について報告を求めることがあります。
+      </p>
+      <p>
+        ライセンス料の支払い方法、支払い期限、通貨、換算レートその他必要な事項は、
+        当方が対象者と協議のうえ、または当方が別途指定する方法によるものとします。
+      </p>
+    </section>
+
+    <section id="suspension">
+      <h2>16. 販売停止・許諾取消</h2>
+      <p>
+        当方は、対象制作物または対象者の行為が本規約または二次創作ガイドラインに反すると判断した場合、
+        理由の開示の有無にかかわらず、対象制作物の販売停止、販売ページの削除、表示の修正、
+        本許諾の停止または取消を求めることができます。
+      </p>
+      <p>
+        対象者は、当方からの要請を受けた場合、速やかにこれに従うものとします。
+      </p>
+      <p>
+        当方が公式商品として販売している、または販売予定である商品と同一または著しく類似する制作物については、
+        当方の判断により販売停止または制限を求める場合があります。
+      </p>
+    </section>
+
+    <section id="liability">
+      <h2>17. 責任・免責</h2>
+      <p>
+        対象者は、対象制作物の品質、安全性、表示、説明、販売、発送、返品、返金、購入者対応、
+        税務、法令遵守その他一切について、自己の責任で対応するものとします。
+      </p>
+      <p>
+        対象制作物に関して購入者、第三者、販売プラットフォーム、行政機関その他の者との間で紛争、
+        損害、事故、トラブルが発生した場合でも、当方は一切の責任を負いません。
+      </p>
+      <p>
+        対象者は、自己の制作物および販売活動により当方または第三者に損害を与えた場合、
+        自己の責任と費用においてこれを解決するものとします。
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>18. 規約の変更</h2>
+      <p>
+        当方は、必要に応じて、本規約を予告なく変更することがあります。
+      </p>
+      <p>
+        変更後の規約は、当方が公開した時点から有効となります。
+        対象者は、販売を行う際、常に最新の本規約を確認するものとします。
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>19. 問い合わせ</h2>
+      <p>
+        本規約に関する問い合わせ、個別許諾の相談、年間売上超過時の自己申告は、
+        以下の窓口からご連絡ください。
+      </p>
+      <p>
+        お問い合わせ先：
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSejtHmw7IOlF52pmQCSWizEMwxTyTQ-Nzdc-nG6dwPHLbxNJA/viewform?usp=publish-editor">https://docs.google.com/forms/d/e/1FAIpQLSejtHmw7IOlF52pmQCSWizEMwxTyTQ-Nzdc-nG6dwPHLbxNJA/viewform?usp=publish-editor</a>
+      </p>
+      <p>
+        すべての問い合わせに回答できるとは限りません。
+        また、当方が個別に回答しない場合でも、本規約に反する利用を許可したものではありません。
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2026 TomaToma. All Rights Reserved.</p>
+      <p>Fan-made Goods License Terms</p>
+    </footer>
+  </main>
+</body>
+</html>

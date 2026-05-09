@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fan Creation Guidelines | TomaToma</title>
+  <meta
+    name="description"
+    content="Fan Creation Guidelines for TomaToma. These guidelines set out the terms for fan art, fan activities, social media posts, and related fan creations."
+  />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #6366f1;
+      --accent-bg: #eef2ff;
+      --danger: #b91c1c;
+      --danger-bg: #fef2f2;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Inter",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .hero {
+      padding: 40px 32px;
+      background: linear-gradient(135deg, #ffffff, #eef2ff);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .hero__label {
+      display: inline-block;
+      padding: 4px 12px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .notice {
+      padding: 18px 20px;
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      border: 1px solid #c7d2fe;
+      background: var(--accent-bg);
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    .toc {
+      padding: 24px;
+      margin-bottom: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 1.4em;
+    }
+
+    .toc li {
+      margin: 4px 0;
+    }
+
+    section {
+      padding: 28px;
+      margin-bottom: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.45rem;
+      line-height: 1.4;
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 14px;
+      padding-left: 1.4em;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .example {
+      padding: 14px 16px;
+      margin: 14px 0;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-bg);
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .danger {
+      padding: 16px 18px;
+      margin: 16px 0;
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      background: var(--danger-bg);
+    }
+
+    .danger strong {
+      color: var(--danger);
+    }
+
+    .credit-box {
+      padding: 16px;
+      margin: 14px 0;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+
+    .license-link {
+      padding: 18px 20px;
+      margin-top: 20px;
+      border-radius: var(--radius);
+      border: 1px solid #c7d2fe;
+      background: var(--accent-bg);
+      font-weight: 600;
+    }
+
+    .license-link p {
+      margin: 0;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding: 28px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 20px, 960px);
+        padding-top: 20px;
+      }
+
+      .hero,
+      section,
+      .toc {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero__label">Fan Creation Guidelines</div>
+      <h1>TomaToma Fan Creation Guidelines</h1>
+      <p class="lead">
+        These Guidelines set out the rules for fan creation activities related to TomaToma,
+        so that fans can enjoy creating and sharing their works safely and respectfully.
+      </p>
+      <p class="meta">
+        Published: May 9, 2026 / Last updated: May 9, 2026
+      </p>
+    </header>
+
+    <div class="notice">
+      <p>
+        You may engage in fan creation activities within the scope of these Guidelines without obtaining individual permission.
+        However, these Guidelines do not waive any copyrights, trademark rights, or other rights related to TomaToma
+        or its related content.
+      </p>
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#policy">Basic Policy</a></li>
+        <li><a href="#permitted">Permitted Uses</a></li>
+        <li><a href="#non-commercial">Non-commercial and Hobby Use</a></li>
+        <li><a href="#prohibited">Prohibited Uses</a></li>
+        <li><a href="#adult">Adult-oriented Expressions</a></li>
+        <li><a href="#ai">AI and Generative AI</a></li>
+        <li><a href="#third-party">Third-party Rights</a></li>
+        <li><a href="#credit">Credit Notice</a></li>
+        <li><a href="#permission">Inquiries and Individual Permission</a></li>
+        <li><a href="#takedown">Requests for Suspension or Removal</a></li>
+        <li><a href="#changes">Changes to These Guidelines</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+      </ol>
+    </nav>
+
+    <section id="policy">
+      <h2>1. Basic Policy</h2>
+      <p>
+        We welcome creative activities by fans.
+      </p>
+      <p>
+        However, in order to protect the character's image, world, third-party rights, and social safety,
+        any use that violates these Guidelines is prohibited.
+      </p>
+      <p>
+        These Guidelines do not waive any copyrights or other rights.
+        All copyrights, trademark rights, and other rights related to TomaToma, including illustrations, settings,
+        names, logos, and other related content, belong to us or to the rightful rights holders.
+      </p>
+    </section>
+
+    <section id="permitted">
+      <h2>2. Permitted Uses</h2>
+      <p>
+        As a general rule, fan creations by individuals for non-commercial or hobby purposes are permitted.
+      </p>
+
+      <h3>Examples of permitted uses</h3>
+      <ul>
+        <li>Creating and posting fan art on social media</li>
+        <li>Creating and publishing comics, illustrations, novels, videos, cosplay, and similar works</li>
+        <li>Small-scale distribution of doujinshi, acrylic keychains, stickers, and similar items</li>
+        <li>Introductions, impressions, and reviews on personal websites, social media, and video platforms</li>
+        <li>Parodies, arrangements, and fan works that add new creative expression to the original work</li>
+      </ul>
+
+      <p>
+        However, simply copying, tracing, cropping, or lightly modifying official materials may be regarded as unauthorized use
+        of official materials rather than a fan creation.
+      </p>
+    </section>
+
+    <section id="non-commercial">
+      <h2>3. Non-commercial and Hobby Use</h2>
+      <p>
+        The following types of use are generally considered non-commercial or hobby use.
+      </p>
+
+      <ul>
+        <li>Small-scale distribution at doujin or fan events</li>
+        <li>Sales intended only to recover actual costs, such as production, printing, materials, and shipping costs</li>
+        <li>Publication on personal social media accounts or video platforms</li>
+        <li>Exhibition or distribution as part of ordinary fan activities</li>
+      </ul>
+
+      <h3>Uses requiring prior permission</h3>
+      <ul>
+        <li>Use by corporations, organizations, or businesses</li>
+        <li>Continuous or large-scale sales</li>
+        <li>Use primarily for made-to-order production, mass production, wholesale, or consignment sales</li>
+        <li>Use of the character for advertising, promotion, campaigns, or tie-ins</li>
+        <li>Use in apps, games, NFTs, AI training datasets, generative AI services, or commercial asset collections</li>
+        <li>Any other use that we determine to be highly commercial in nature</li>
+      </ul>
+    </section>
+
+    <section id="prohibited">
+      <h2>4. Prohibited Uses</h2>
+
+      <h3>4.1 Use that may be mistaken for official content</h3>
+      <ul>
+        <li>Displaying the work in a way that may imply it is official, authorized, affiliated, sponsored, or endorsed</li>
+        <li>Unauthorized use of official logos, official marks, or designs resembling an official website</li>
+        <li>Using names, icons, or profiles that may be mistaken for official accounts</li>
+        <li>Presenting the work as if it were published or announced by us</li>
+      </ul>
+
+      <p>When publishing fan creations, please include a notice such as the following where appropriate.</p>
+
+      <div class="example">
+        This is a fan-made work and is not an official work.
+      </div>
+
+      <h3>4.2 Use without sufficient originality</h3>
+      <ul>
+        <li>Reposting official illustrations, images, videos, audio, or text as-is</li>
+        <li>Using official materials only by tracing, cropping, changing colors, or making minor edits</li>
+        <li>Creating summary sites, asset distribution pages, or reposting services whose main purpose is to view, store, or redistribute official content</li>
+        <li>Turning official materials into merchandise for sale</li>
+      </ul>
+
+      <h3>4.3 Use that seriously harms the character's image</h3>
+      <ul>
+        <li>Expressions that seriously harm the credibility or image of the character, the work, or us</li>
+        <li>Malicious modifications, insults, or use primarily intended to provoke controversy</li>
+        <li>Antisocial, violent, discriminatory, threatening, or harassing expressions</li>
+        <li>Use involving defamation, slander, invasion of privacy, or other harm to third parties</li>
+        <li>Use that violates laws, regulations, or public order and morals</li>
+      </ul>
+
+      <h3>4.4 Use for political, religious, or ideological activities</h3>
+      <p>The following uses are prohibited.</p>
+
+      <ul>
+        <li>Use for the purpose of supporting, criticizing, or promoting a specific political party, politician, candidate, political organization, or political movement</li>
+        <li>Use for election activities, political campaigns, or the spread of political claims</li>
+        <li>Use for the purpose of promoting a specific religion, religious organization, religious activity, missionary activity, or religious solicitation</li>
+        <li>Use for the purpose of expressing support for or opposition to a specific ideology, belief, social movement, or organization</li>
+        <li>Use that makes it appear as though the character holds a specific political or religious position</li>
+      </ul>
+
+      <div class="danger">
+        <p>
+          <strong>Prohibited:</strong>
+          TomaToma may not be used as a symbol, spokesperson, advertising material, or promotional material for political or religious claims.
+        </p>
+      </div>
+
+      <h3>4.5 Restrictions on users and accounts</h3>
+      <p>
+        We may exclude the following individuals, organizations, or accounts from the permission granted under these Guidelines
+        at our discretion.
+      </p>
+
+      <ul>
+        <li>Persons who have been finally convicted of serious crimes</li>
+        <li>Antisocial forces or persons engaged in similar activities</li>
+        <li>Persons who promote illegal acts, violence, fraud, exploitation, discrimination, hate, or extremist conduct</li>
+        <li>Individuals, organizations, or accounts whose primary purpose is the daily promotion, solicitation, or incitement of political, religious, ideological, or social movement activities</li>
+        <li>Persons whom we determine may harm our credibility, the character's world, or brand image</li>
+      </ul>
+
+      <p>
+        This restriction is not based on any particular ideology, belief, or political position itself.
+        It is intended to prevent the character from being used for, or being mistaken as associated with,
+        political, religious, or antisocial activities.
+      </p>
+    </section>
+
+    <section id="adult">
+      <h2>5. Adult-oriented Expressions</h2>
+      <p>
+        For adult-oriented, highly sexual, excessively violent, or grotesque expressions, you must comply with
+        publication venue rules, age restrictions, zoning requirements, and the terms of each platform.
+      </p>
+
+      <p>However, the following expressions are prohibited.</p>
+
+      <ul>
+        <li>Sexual expressions involving characters who may be perceived as minors</li>
+        <li>Expressions that affirm or promote sexual exploitation, coercion, violence, or crime</li>
+        <li>Expressions that seriously harm the character's dignity or image</li>
+        <li>Adult-oriented expressions published without sufficient access restrictions or zoning</li>
+      </ul>
+
+      <p>
+        If we determine that a work is inappropriate, we may request suspension, removal, or correction of the work.
+      </p>
+    </section>
+
+    <section id="ai">
+      <h2>6. AI and Generative AI</h2>
+      <p>The following uses are prohibited.</p>
+
+      <ul>
+        <li>Using official illustrations, fan creations, or character images as AI training data without permission</li>
+        <li>Creating, distributing, or selling AI models, LoRA models, prompt collections, asset collections, or similar materials that reproduce the character</li>
+        <li>Publishing AI-generated content in a way that may be mistaken for official content</li>
+        <li>Using AI-generated content in a way that may infringe our rights or third-party rights</li>
+      </ul>
+
+      <p>
+        If you publish AI-generated content, please clearly indicate that AI was used and take sufficient care
+        to avoid any confusion with official works.
+      </p>
+    </section>
+
+    <section id="third-party">
+      <h2>7. Third-party Rights</h2>
+      <p>
+        If your fan creation uses third-party copyrighted works, trademarks, people, characters, music, photographs,
+        videos, logos, or other materials, please check the relevant rights holders' permissions and guidelines.
+      </p>
+      <p>
+        We are not responsible for any disputes or problems arising from combining TomaToma with third-party rights or materials.
+      </p>
+    </section>
+
+    <section id="credit">
+      <h2>8. Credit Notice</h2>
+      <p>
+        When publishing or distributing fan creations, please include the following notice where reasonably possible.
+      </p>
+
+      <div class="credit-box">
+        Original character: TomaToma<br />
+        This is a fan-made work and is not an official work.<br />
+        © 2026 TomaToma. All Rights Reserved.
+      </div>
+
+      <p>
+        If you would like to make the rights holder or brand name clearer, you may also use the following notice.
+      </p>
+
+      <div class="credit-box">
+        © 2026 TomaToma / Mackerelish. All Rights Reserved.
+      </div>
+    </section>
+
+    <section id="permission">
+      <h2>9. Inquiries and Individual Permission</h2>
+      <p>
+        Please contact us in advance if you wish to engage in any of the following uses.
+      </p>
+
+      <ul>
+        <li>Commercial use</li>
+        <li>Use by corporations or organizations</li>
+        <li>Use for advertising, promotion, or tie-ins</li>
+        <li>Mass production or large-scale sales</li>
+        <li>Use in apps, games, video works, publications, or similar media</li>
+        <li>Any use where you are unsure whether permission is required</li>
+      </ul>
+
+      <p>
+        We may not be able to respond to every inquiry.
+        If we do not respond individually, that does not mean the relevant use is permitted under these Guidelines.
+      </p>
+
+      <p>
+        Contact:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSejtHmw7IOlF52pmQCSWizEMwxTyTQ-Nzdc-nG6dwPHLbxNJA/viewform?usp=publish-editor">Contact Form</a>
+      </p>
+    </section>
+
+    <section id="takedown">
+      <h2>10. Requests for Suspension or Removal</h2>
+      <p>
+        If we determine that a fan creation is inappropriate, we may request suspension of publication,
+        suspension of sales, removal, or correction of the fan creation, with or without disclosing the reason.
+      </p>
+      <p>
+        If we make such a request, the user must promptly comply with it.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>11. Changes to These Guidelines</h2>
+      <p>
+        We may change these Guidelines without prior notice.
+      </p>
+      <p>
+        The revised Guidelines will take effect when published.
+        Please always check the latest version before engaging in fan creation activities.
+      </p>
+    </section>
+
+    <section id="disclaimer">
+      <h2>12. Disclaimer</h2>
+      <p>
+        Fan creation activities are carried out at the user's own responsibility.
+      </p>
+      <p>
+        We are not responsible for any disputes, damages, or problems that arise between users and third parties
+        in connection with fan creation activities.
+      </p>
+    </section>
+
+    <div class="license-link">
+      <p>
+        For the sale of fan-made goods, please refer to the
+        <a href="./fan_creator_license_en.html">Fan-made Goods License Terms</a>.
+      </p>
+    </div>
+
+    <footer>
+      <p>© 2026 TomaToma. All Rights Reserved.</p>
+      <p>Fan Creation Guidelines</p>
+    </footer>
+  </main>
+</body>
+</html>
