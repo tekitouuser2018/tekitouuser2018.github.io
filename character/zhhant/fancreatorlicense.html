@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>粉絲創作商品銷售授權條款 | TomaToma</title>
+  <meta
+    name="description"
+    content="TomaToma IP 個人創作者向粉絲創作商品銷售授權條款。"
+  />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #4f46e5;
+      --accent-bg: #eef2ff;
+      --success: #047857;
+      --success-bg: #ecfdf5;
+      --warning: #92400e;
+      --warning-bg: #fffbeb;
+      --danger: #b91c1c;
+      --danger-bg: #fef2f2;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        Arial,
+        sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .hero {
+      padding: 42px 32px;
+      background: linear-gradient(135deg, #ffffff, #eef2ff);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .hero__label {
+      display: inline-block;
+      padding: 4px 12px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .notice,
+    .summary,
+    .warning-box {
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      border-radius: var(--radius);
+      border: 1px solid #c7d2fe;
+      background: var(--accent-bg);
+    }
+
+    .notice p,
+    .summary p,
+    .warning-box p {
+      margin: 0;
+    }
+
+    .summary {
+      border-color: #a7f3d0;
+      background: var(--success-bg);
+    }
+
+    .summary strong {
+      color: var(--success);
+    }
+
+    .warning-box {
+      border-color: #fde68a;
+      background: var(--warning-bg);
+    }
+
+    .warning-box strong {
+      color: var(--warning);
+    }
+
+    .toc {
+      padding: 24px;
+      margin-bottom: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 1.4em;
+    }
+
+    .toc li {
+      margin: 4px 0;
+    }
+
+    section {
+      padding: 28px;
+      margin-bottom: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.45rem;
+      line-height: 1.35;
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 14px;
+      padding-left: 1.4em;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .mini-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #f9fafb;
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+    }
+
+    .ok {
+      border-color: #a7f3d0;
+      background: var(--success-bg);
+    }
+
+    .ng {
+      border-color: #fecaca;
+      background: var(--danger-bg);
+    }
+
+    .ng h3,
+    .danger strong {
+      color: var(--danger);
+    }
+
+    .example,
+    .credit-box {
+      padding: 14px 16px;
+      margin: 14px 0;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-bg);
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .credit-box {
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      font-size: 0.95rem;
+      font-weight: 500;
+      overflow-x: auto;
+      white-space: normal;
+    }
+
+    .danger {
+      padding: 16px 18px;
+      margin: 16px 0;
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      background: var(--danger-bg);
+    }
+
+    .country-panel {
+      padding: 18px;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #f9fafb;
+    }
+
+    .country-panel h3 {
+      margin-top: 0;
+    }
+
+    .country-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 6px 18px;
+      padding-left: 1.1em;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .country-list li {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f9fafb;
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding: 28px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 20px, 980px);
+        padding-top: 20px;
+      }
+
+      .hero,
+      section,
+      .toc {
+        padding: 22px 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero__label">Fan-Made Goods License</div>
+      <h1>TomaToma 粉絲創作商品銷售授權條款</h1>
+      <p class="lead">
+        本條款旨在讓喜愛 TomaToma 並尊重其世界觀的個人創作者，
+        能夠在粉絲活動的延伸範圍內，小規模銷售實體粉絲創作商品。
+      </p>
+      <p class="meta">
+        制定日：2026年5月9日 / 最後更新日：2026年5月9日
+      </p>
+    </header>
+
+    <div class="notice">
+      <p>
+        本條款與 TomaToma 粉絲創作指南一併適用。本條款未明定之事項，依粉絲創作指南辦理。
+        本繁體中文版係為協助使用者理解而提供之翻譯版本；如本版本與日文原文之間有任何差異或不一致，應以日文原文為準。
+      </p>
+    </div>
+
+    <div class="summary">
+      <p>
+        <strong>摘要：</strong>
+        符合下列條件的個人創作者，得在無須事前許可且無須支付授權費的情況下，
+        銷售實體粉絲創作商品。若符合條件商品的年銷售額超過 30,000 美元等值金額，
+        僅就超過 30,000 美元之部分收取 10% 授權費。
+      </p>
+    </div>
+
+    <div class="warning-box">
+      <p>
+        <strong>重要：</strong>
+        數位產品、兒童商品、絨毛玩偶、人偶、模型、玩具、食品、化妝品、NFT、AI 相關商品及類似商品，
+        不屬於本條款允許銷售的範圍。
+      </p>
+    </div>
+
+    <nav class="toc" aria-label="目錄">
+      <h2>目錄</h2>
+      <ol>
+        <li><a href="#purpose">目的</a></li>
+        <li><a href="#relation">與粉絲創作指南之關係</a></li>
+        <li><a href="#definitions">定義</a></li>
+        <li><a href="#eligible">適用對象</a></li>
+        <li><a href="#territory">授權國家／地區與銷售區域</a></li>
+        <li><a href="#license">授權範圍</a></li>
+        <li><a href="#income-sales">年收入與年銷售額</a></li>
+        <li><a href="#royalty">超過門檻時的授權費</a></li>
+        <li><a href="#permitted-goods">可以銷售的商品</a></li>
+        <li><a href="#prohibited-goods">不得銷售的商品</a></li>
+        <li><a href="#production-method">製作方式與銷售方式</a></li>
+        <li><a href="#credit">標示與著作權資訊</a></li>
+        <li><a href="#environment">素材與環境考量</a></li>
+        <li><a href="#prohibited-conduct">禁止行為</a></li>
+        <li><a href="#reporting">自行申報、報告與付款</a></li>
+        <li><a href="#suspension">停止銷售與撤銷授權</a></li>
+        <li><a href="#liability">責任與免責</a></li>
+        <li><a href="#changes">條款變更</a></li>
+        <li><a href="#contact">聯絡方式</a></li>
+      </ol>
+    </nav>
+
+    <section id="purpose">
+      <h2>1. 目的</h2>
+      <p>
+        本條款之目的，是讓喜愛 TomaToma 並尊重其世界觀的個人創作者，
+        能夠為補貼生活費、學費、創作活動費或類似需求，而小規模銷售粉絲創作商品。
+      </p>
+      <p>
+        我們尊重粉絲的創作活動。同時，為保護 TomaToma 的形象、世界觀、品牌、第三方權利以及購買者安全，
+        禁止任何違反本條款所定條件之使用。
+      </p>
+    </section>
+
+    <section id="relation">
+      <h2>2. 與粉絲創作指南之關係</h2>
+      <p>
+        本條款獨立於 TomaToma 粉絲創作指南，專門規範粉絲創作商品之銷售。
+      </p>
+      <p>
+        適用對象必須同時遵守本條款與粉絲創作指南。若本條款與粉絲創作指南內容有所牴觸，
+        就銷售相關事項而言，應優先適用本條款。
+      </p>
+      <p>
+        本條款並不表示我們放棄與 TomaToma 及相關內容有關的任何著作權、商標權或其他權利。
+      </p>
+    </section>
+
+    <section id="definitions">
+      <h2>3. 定義</h2>
+      <p>於本條款中，下列用語具有以下意義。</p>
+
+      <ul>
+        <li>
+          <strong>「我們」</strong>係指管理 TomaToma 及相關內容權利之主體。
+        </li>
+        <li>
+          <strong>「本角色」</strong>係指 TomaToma 及其相關角色、名稱、設定、世界觀、插畫、標誌及其他相關元素。
+        </li>
+        <li>
+          <strong>「適用對象」</strong>係指符合本條款條件之個人創作者。
+        </li>
+        <li>
+          <strong>「符合條件商品」</strong>係指適用對象以本角色為基礎創作之實體粉絲創作商品。
+        </li>
+        <li>
+          <strong>「年收入」</strong>係指適用對象本人為維持生活費、學費或其他生計需求而取得之收入。
+          配偶、家人、同住者、扶養者或其他第三方之收入不包含在內。
+        </li>
+        <li>
+          <strong>「年銷售額」</strong>係指於一個曆年或我們另行指定之 12 個月期間內，
+          因銷售符合條件商品而產生之銷售金額合計。銷售稅、加值稅、運費及已退款金額得予以排除。
+        </li>
+      </ul>
+    </section>
+
+    <section id="eligible">
+      <h2>4. 適用對象</h2>
+      <p>
+        本條款適用於理解並同意我們的粉絲創作指南及本條款之個人創作者。
+      </p>
+      <p>
+        適用對象限於尊重本角色及其世界觀，並將符合條件商品之製作與銷售作為粉絲活動延伸之個人。
+      </p>
+
+      <div class="grid">
+        <div class="mini-card ok">
+          <h3>適用對象例</h3>
+          <ul>
+            <li>個人粉絲插畫創作者</li>
+            <li>個人手作創作者</li>
+            <li>美術或設計相關學生</li>
+            <li>為補貼生活費、學費或創作活動費而小規模銷售的個人</li>
+          </ul>
+        </div>
+
+        <div class="mini-card ng">
+          <h3>不適用對象例</h3>
+          <ul>
+            <li>公司、法人、團體及事業經營者</li>
+            <li>代理商、製造商及批發商</li>
+            <li>持續進行大量生產或大量銷售之主體</li>
+            <li>違反本條款或粉絲創作指南之主體</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        公司、法人、團體、事業經營者、代理商、製造商、批發商或其他類似主體之使用，
+        不屬於本條款範圍，並須另行事前取得許可。
+      </p>
+    </section>
+
+    <section id="territory">
+      <h2>5. 授權國家／地區與銷售區域</h2>
+      <p>
+        依本條款進行銷售，僅限於適用對象居住於我們指定之授權國家／地區，
+        並向該等授權國家／地區銷售之情形。
+      </p>
+      <p>
+        適用對象應自行負責遵守與銷售、配送、廣告、付款、進出口、消費者保護、稅務、標示、安全標準及類似事項有關之一切適用法令與規範。
+      </p>
+      <p>
+        進行線上銷售時，適用對象應透過銷售頁面、配送設定、付款設定或其他類似方式，
+        採取合理措施，避免向我們指定之授權國家／地區以外銷售或配送。
+      </p>
+
+      <div class="country-panel">
+        <h3>授權國家／地區</h3>
+        <ul class="country-list">
+          <li>阿富汗</li>
+          <li>阿爾巴尼亞</li>
+          <li>阿爾及利亞</li>
+          <li>安哥拉</li>
+          <li>安圭拉</li>
+          <li>安地卡及巴布達</li>
+          <li>阿根廷</li>
+          <li>亞美尼亞</li>
+          <li>澳洲</li>
+          <li>奧地利</li>
+          <li>亞塞拜然</li>
+          <li>巴哈馬</li>
+          <li>巴林</li>
+          <li>巴貝多</li>
+          <li>白俄羅斯</li>
+          <li>比利時</li>
+          <li>貝里斯</li>
+          <li>貝南</li>
+          <li>百慕達</li>
+          <li>不丹</li>
+          <li>玻利維亞</li>
+          <li>波士尼亞與赫塞哥維納</li>
+          <li>波札那</li>
+          <li>巴西</li>
+          <li>英屬維京群島</li>
+          <li>汶萊</li>
+          <li>保加利亞</li>
+          <li>布吉納法索</li>
+          <li>柬埔寨</li>
+          <li>喀麥隆</li>
+          <li>加拿大</li>
+          <li>維德角</li>
+          <li>開曼群島</li>
+          <li>查德</li>
+          <li>智利</li>
+          <li>中國大陸</li>
+          <li>哥倫比亞</li>
+          <li>剛果民主共和國</li>
+          <li>剛果共和國</li>
+          <li>哥斯大黎加</li>
+          <li>象牙海岸</li>
+          <li>克羅埃西亞</li>
+          <li>賽普勒斯</li>
+          <li>捷克共和國</li>
+          <li>丹麥</li>
+          <li>多米尼克</li>
+          <li>多明尼加共和國</li>
+          <li>厄瓜多</li>
+          <li>埃及</li>
+          <li>薩爾瓦多</li>
+          <li>愛沙尼亞</li>
+          <li>史瓦帝尼</li>
+          <li>斐濟</li>
+          <li>芬蘭</li>
+          <li>法國</li>
+          <li>加彭</li>
+          <li>甘比亞</li>
+          <li>喬治亞</li>
+          <li>德國</li>
+          <li>迦納</li>
+          <li>希臘</li>
+          <li>格瑞那達</li>
+          <li>瓜地馬拉</li>
+          <li>幾內亞比索</li>
+          <li>蓋亞那</li>
+          <li>宏都拉斯</li>
+          <li>匈牙利</li>
+          <li>冰島</li>
+          <li>印度</li>
+          <li>印尼</li>
+          <li>伊拉克</li>
+          <li>愛爾蘭</li>
+          <li>以色列</li>
+          <li>義大利</li>
+          <li>牙買加</li>
+          <li>約旦</li>
+          <li>哈薩克</li>
+          <li>肯亞</li>
+          <li>科索沃</li>
+          <li>科威特</li>
+          <li>吉爾吉斯</li>
+          <li>寮國</li>
+          <li>拉脫維亞</li>
+          <li>黎巴嫩</li>
+          <li>賴比瑞亞</li>
+          <li>利比亞</li>
+          <li>立陶宛</li>
+          <li>盧森堡</li>
+          <li>澳門</li>
+          <li>馬達加斯加</li>
+          <li>馬拉威</li>
+          <li>馬來西亞</li>
+          <li>馬爾地夫</li>
+          <li>馬利</li>
+          <li>馬爾他</li>
+          <li>茅利塔尼亞</li>
+          <li>模里西斯</li>
+          <li>墨西哥</li>
+          <li>密克羅尼西亞</li>
+          <li>摩爾多瓦</li>
+          <li>蒙古</li>
+          <li>蒙特內哥羅</li>
+          <li>蒙哲臘</li>
+          <li>摩洛哥</li>
+          <li>莫三比克</li>
+          <li>緬甸</li>
+          <li>納米比亞</li>
+          <li>諾魯</li>
+          <li>尼泊爾</li>
+          <li>荷蘭</li>
+          <li>紐西蘭</li>
+          <li>尼加拉瓜</li>
+          <li>尼日</li>
+          <li>奈及利亞</li>
+          <li>北馬其頓</li>
+          <li>挪威</li>
+          <li>阿曼</li>
+          <li>巴基斯坦</li>
+          <li>帛琉</li>
+          <li>巴拿馬</li>
+          <li>巴布亞紐幾內亞</li>
+          <li>巴拉圭</li>
+          <li>秘魯</li>
+          <li>菲律賓</li>
+          <li>波蘭</li>
+          <li>葡萄牙</li>
+          <li>卡達</li>
+          <li>羅馬尼亞</li>
+          <li>俄羅斯</li>
+          <li>盧安達</li>
+          <li>聖克里斯多福及尼維斯</li>
+          <li>聖露西亞</li>
+          <li>聖文森及格瑞那丁</li>
+          <li>聖多美普林西比</li>
+          <li>沙烏地阿拉伯</li>
+          <li>塞內加爾</li>
+          <li>塞爾維亞</li>
+          <li>塞席爾</li>
+          <li>獅子山</li>
+          <li>新加坡</li>
+          <li>斯洛伐克</li>
+          <li>斯洛維尼亞</li>
+          <li>索羅門群島</li>
+          <li>南非</li>
+          <li>南韓</li>
+          <li>西班牙</li>
+          <li>斯里蘭卡</li>
+          <li>蘇利南</li>
+          <li>瑞典</li>
+          <li>瑞士</li>
+          <li>台灣</li>
+          <li>塔吉克</li>
+          <li>坦尚尼亞</li>
+          <li>泰國</li>
+          <li>東加</li>
+          <li>千里達及托巴哥</li>
+          <li>突尼西亞</li>
+          <li>土耳其</li>
+          <li>土庫曼</li>
+          <li>土克斯及開科斯群島</li>
+          <li>烏干達</li>
+          <li>烏克蘭</li>
+          <li>阿拉伯聯合大公國</li>
+          <li>英國</li>
+          <li>美國</li>
+          <li>烏拉圭</li>
+          <li>烏茲別克</li>
+          <li>萬那杜</li>
+          <li>委內瑞拉</li>
+          <li>越南</li>
+          <li>葉門</li>
+          <li>尚比亞</li>
+          <li>辛巴威</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="license">
+      <h2>6. 授權範圍</h2>
+      <p>
+        若適用對象遵守本條款與粉絲創作指南，我們授予該適用對象一項非專屬授權，
+        得僅於製作及銷售符合條件商品所必要之範圍內使用本角色。
+      </p>
+      <p>
+        本授權僅授予適用對象本人，不得轉讓、出借、移轉或再授權予任何第三方。
+      </p>
+      <p>
+        本授權並不授予將任何商品作為官方商品、授權商品、合作商品、贊助商品或其他類似商品銷售之權利。
+      </p>
+    </section>
+
+    <section id="income-sales">
+      <h2>7. 年收入與年銷售額</h2>
+      <p>
+        原則上，符合以下所有條件之個人創作者，得在無須事前許可且無須支付授權費之情況下銷售符合條件商品。
+      </p>
+
+      <ul>
+        <li>適用對象本人的年收入為 30,000 美元等值金額以下。</li>
+        <li>符合條件商品之年銷售額為 30,000 美元等值金額以下。</li>
+        <li>適用對象遵守本條款與粉絲創作指南。</li>
+      </ul>
+
+      <p>
+        年收入與年銷售額以適用對象自行申報為準。我們通常不要求提出證明文件。
+      </p>
+      <p>
+        但如我們懷疑存在虛偽申報、不當使用、大規模銷售、偽裝為個人之法人使用，
+        或其他違反本條款目的之使用，我們得要求提供合理之佐證資料。
+      </p>
+    </section>
+
+    <section id="royalty">
+      <h2>8. 超過門檻時的授權費</h2>
+      <p>
+        若符合條件商品之年銷售額超過 30,000 美元等值金額，
+        適用對象應就超過 30,000 美元之部分，向我們支付相當於該超過部分 10% 之授權費。
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>年銷售額</th>
+              <th>免授權費額度</th>
+              <th>授權費計算對象</th>
+              <th>授權費</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>30,000 美元等值金額以下</td>
+              <td>最高 30,000 美元等值金額</td>
+              <td>無</td>
+              <td>無須支付</td>
+            </tr>
+            <tr>
+              <td>40,000 美元等值金額</td>
+              <td>最高 30,000 美元等值金額</td>
+              <td>超過部分 10,000 美元等值金額</td>
+              <td>1,000 美元等值金額</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        年銷售額超過 30,000 美元等值金額，並不會立即構成本條款違反。
+        但適用對象應於知悉超過門檻時，或於適用年度結束後合理期間內，向我們自行申報。
+      </p>
+      <p>
+        付款方式、付款時期、匯率及其他必要事項，應依我們另行指定之方式辦理。
+      </p>
+    </section>
+
+    <section id="permitted-goods">
+      <h2>9. 可以銷售的商品</h2>
+      <p>
+        依本條款可以銷售的商品，限於實體商品。符合條件商品之例示如下。
+      </p>
+
+      <ul>
+        <li>T-shirt</li>
+        <li>海報</li>
+        <li>掛布</li>
+        <li>貼紙</li>
+        <li>明信片</li>
+        <li>藝術印刷品</li>
+        <li>同人誌與小冊子</li>
+        <li>壓克力鑰匙圈</li>
+        <li>壓克力立牌</li>
+        <li>徽章／胸章</li>
+        <li>別針</li>
+        <li>吊飾</li>
+        <li>托特包</li>
+        <li>手作飾品</li>
+        <li>陶器、木工作品與布製小物</li>
+        <li>其他我們認為適合作為小規模粉絲創作商品之物品</li>
+      </ul>
+
+      <p>
+        即使商品屬於上述例示項目，若可能被誤認為官方商品、違反本條款或粉絲創作指南，
+        或經我們判斷為不適當，仍不得銷售。
+      </p>
+    </section>
+
+    <section id="prohibited-goods">
+      <h2>10. 不得銷售的商品</h2>
+      <p>
+        以下商品不得依本條款銷售。如欲銷售此類商品，須另行事前取得許可。
+      </p>
+
+      <h3>10.1 數位產品</h3>
+      <ul>
+        <li>數位產品、下載商品及數位資料</li>
+        <li>電子書、PDF、圖片資料、桌布及圖示素材</li>
+        <li>貼圖、表情圖、直播素材、模板及素材包</li>
+        <li>3D 模型、3D 列印資料、Live2D 模型、VRM 模型及虛擬化身</li>
+        <li>遊戲、App、MOD 及外掛</li>
+        <li>NFT 與區塊鏈相關商品</li>
+        <li>AI 訓練資料、AI 模型、LoRA 及提示詞集</li>
+        <li>其他類似商品</li>
+      </ul>
+
+      <p>
+        本項並不禁止在粉絲創作指南範圍內，於社群媒體或類似平台非商業性發布粉絲繪圖或粉絲作品。
+      </p>
+
+      <h3>10.2 兒童商品</h3>
+      <ul>
+        <li>兒童玩具</li>
+        <li>兒童服飾</li>
+        <li>兒童飾品</li>
+        <li>學用品</li>
+        <li>嬰幼兒用品與嬰兒用品</li>
+        <li>兒童餐具、寢具及日用品</li>
+        <li>其他主要供嬰幼兒、未成年人或兒童使用之商品</li>
+      </ul>
+
+      <p>
+        T-shirt 可以銷售，但禁止銷售兒童尺寸、嬰幼兒尺寸，或以兒童為主要銷售對象之商品。
+      </p>
+
+      <h3>10.3 安全性或法規風險較高的商品</h3>
+      <ul>
+        <li>絨毛玩偶、人偶、模型、玩具及其他類似立體商品</li>
+        <li>食品與飲料</li>
+        <li>化妝品與香氛商品</li>
+        <li>藥品、醫藥部外品及保健食品</li>
+        <li>電器產品與電子設備</li>
+        <li>涉及火源、刀具、危險物品或化學品之物品</li>
+        <li>可能對人體、動物或環境造成危害之物品</li>
+        <li>其他受特別法規、安全標準、標示義務或類似要求規範之商品</li>
+      </ul>
+
+      <p>
+        絨毛玩偶及其他立體商品，未來可能在另行訂定條件後納入允許範圍。
+      </p>
+    </section>
+
+    <section id="production-method">
+      <h2>11. 製作方式與銷售方式</h2>
+      <p>
+        適用對象得為小規模製作之目的，使用印刷廠、加工業者或製造業者。
+      </p>
+      <p>
+        但禁止持續性大量生產、無庫存銷售、 dropshipping 代發貨、
+        自動化接單生產與銷售、透過第三方平台進行大量銷售，或其他類似銷售方式。
+      </p>
+      <p>
+        適用對象不得於銷售頁面、商品說明、包裝、社群媒體貼文或類似素材中，
+        明示或暗示符合條件商品為官方商品、授權商品、合作商品、贊助商品或其他類似商品。
+      </p>
+    </section>
+
+    <section id="credit">
+      <h2>12. 標示與著作權資訊</h2>
+      <p>
+        適用對象應於合理可行範圍內，在符合條件商品本體、襯卡、包裝、吊牌、說明書或銷售頁面上，
+        標示以下資訊。
+      </p>
+
+      <div class="credit-box">
+        粉絲創作商品，非官方商品。<br />
+        © 2026 TomaToma. All Rights Reserved.
+      </div>
+
+      <p>
+        如欲更明確標示權利人或品牌名稱，也可以使用以下標示。
+      </p>
+
+      <div class="credit-box">
+        © 2026 TomaToma / Mackerelish. All Rights Reserved.
+      </div>
+    </section>
+
+    <section id="environment">
+      <h2>13. 素材與環境考量</h2>
+      <p>
+        適用對象應於合理可行範圍內，選用環境負擔較低之素材、再生素材、可重複使用素材、
+        可回收素材，或源自可再生資源之素材。
+      </p>
+      <p>
+        適用對象亦應於合理可行範圍內避免過度包裝，並減少使用一次性塑膠。
+      </p>
+      <p>
+        若使用「可生物分解」、「可堆肥」、「可回歸自然」等表示，
+        適用對象必須確保該等表示有適當證據、認證及適用法令作為依據，且不得誤導購買者。
+      </p>
+    </section>
+
+    <section id="prohibited-conduct">
+      <h2>14. 禁止行為</h2>
+      <p>適用對象不得從事以下任何行為。</p>
+
+      <ul>
+        <li>違反本條款或粉絲創作指南之行為</li>
+        <li>可能使人誤認為官方商品、授權商品、合作商品或贊助商品之行為</li>
+        <li>將官方插畫、圖片、標誌、素材或類似材料原樣或僅作輕微修改後商品化之行為</li>
+        <li>侵害第三方著作權、商標權、肖像權、名譽、隱私或其他權利之行為</li>
+        <li>以宣傳、勸誘或煽動政治、宗教、思想或社會運動活動為目的之使用</li>
+        <li>反社會、暴力、歧視、威脅或騷擾相關之使用</li>
+        <li>違反法令、公序良俗之使用</li>
+        <li>損害我們、本角色、作品或粉絲社群之聲譽或形象之使用</li>
+        <li>虛偽申報、不當銷售、隱匿銷售額、偽裝為個人之法人使用，或其他違反本條款目的之行為</li>
+      </ul>
+    </section>
+
+    <section id="reporting">
+      <h2>15. 自行申報、報告與付款</h2>
+      <p>
+        若適用對象因符合條件商品所產生之年銷售額超過 30,000 美元等值金額，
+        應於知悉超過門檻時，或於適用年度結束後合理期間內，向我們自行申報。
+      </p>
+      <p>
+        為計算授權費或確認是否遵守本條款，我們得要求提供銷售金額、銷售期間、銷售區域及已銷售商品概要等資訊。
+      </p>
+      <p>
+        付款方式、付款期限、幣別、匯率及其他必要事項，應由我們與適用對象協議決定，
+        或依我們另行指定之方式辦理。
+      </p>
+    </section>
+
+    <section id="suspension">
+      <h2>16. 停止銷售與撤銷授權</h2>
+      <p>
+        若我們判斷任何符合條件商品或適用對象之行為違反本條款或粉絲創作指南，
+        得在揭示或不揭示理由之情況下，要求停止銷售、刪除銷售頁面、修正標示、
+        停止本授權或撤銷本授權。
+      </p>
+      <p>
+        適用對象應於收到我們之要求後，迅速遵從該要求。
+      </p>
+      <p>
+        若任何商品與我們已正式銷售或計畫銷售之商品相同或實質近似，
+        我們得依自行判斷要求停止或限制銷售。
+      </p>
+    </section>
+
+    <section id="liability">
+      <h2>17. 責任與免責</h2>
+      <p>
+        適用對象應就其符合條件商品之品質、安全性、標示、說明、銷售、配送、退貨、退款、
+        購買者支援、稅務、法令遵循及其他一切事項，負完全責任。
+      </p>
+      <p>
+        就符合條件商品，適用對象與購買者、第三方、銷售平台、政府機關或其他任何主體之間發生爭議、
+        損害、事故或其他問題時，我們不負任何責任。
+      </p>
+      <p>
+        若適用對象之商品或銷售活動對我們或任何第三方造成損害，
+        適用對象應自行負責並以自身費用解決該等事項。
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>18. 條款變更</h2>
+      <p>
+        我們得於必要時不經事前通知變更本條款。
+      </p>
+      <p>
+        修訂後之條款於我們公開時生效。適用對象於進行銷售前，應隨時確認本條款之最新版本。
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>19. 聯絡方式</h2>
+      <p>
+        如有關於本條款之問題、另行許可之申請，或年銷售額超過門檻時之自行申報，
+        請使用以下聯絡表單。
+      </p>
+      <p>
+        聯絡方式：
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSejtHmw7IOlF52pmQCSWizEMwxTyTQ-Nzdc-nG6dwPHLbxNJA/viewform?usp=publish-editor">聯絡表單</a>
+      </p>
+      <p>
+        我們未必能回覆所有詢問。即使我們未個別回覆，也不表示已允許任何違反本條款之使用。
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2026 TomaToma. All Rights Reserved.</p>
+      <p>粉絲創作商品銷售授權條款</p>
+    </footer>
+  </main>
+</body>
+</html>

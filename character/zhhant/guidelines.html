@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>粉絲創作指南 | TomaToma</title>
+  <meta
+    name="description"
+    content="TomaToma 粉絲創作指南。本指南規範粉絲繪圖、二次創作、SNS 投稿及相關粉絲創作活動之使用條件。"
+  />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #6366f1;
+      --accent-bg: #eef2ff;
+      --danger: #b91c1c;
+      --danger-bg: #fef2f2;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        Arial,
+        sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .hero {
+      padding: 40px 32px;
+      background: linear-gradient(135deg, #ffffff, #eef2ff);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .hero__label {
+      display: inline-block;
+      padding: 4px 12px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .notice {
+      padding: 18px 20px;
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      border: 1px solid #c7d2fe;
+      background: var(--accent-bg);
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    .toc {
+      padding: 24px;
+      margin-bottom: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 1.4em;
+    }
+
+    .toc li {
+      margin: 4px 0;
+    }
+
+    section {
+      padding: 28px;
+      margin-bottom: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.45rem;
+      line-height: 1.35;
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 14px;
+      padding-left: 1.4em;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .example {
+      padding: 14px 16px;
+      margin: 14px 0;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-bg);
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .danger {
+      padding: 16px 18px;
+      margin: 16px 0;
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      background: var(--danger-bg);
+    }
+
+    .danger strong {
+      color: var(--danger);
+    }
+
+    .credit-box {
+      padding: 16px;
+      margin: 14px 0;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+
+    .license-link {
+      padding: 18px 20px;
+      margin-top: 20px;
+      border-radius: var(--radius);
+      border: 1px solid #c7d2fe;
+      background: var(--accent-bg);
+      font-weight: 600;
+    }
+
+    .license-link p {
+      margin: 0;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding: 28px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 20px, 960px);
+        padding-top: 20px;
+      }
+
+      .hero,
+      section,
+      .toc {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero__label">Fan Creation Guidelines</div>
+      <h1>TomaToma 粉絲創作指南</h1>
+      <p class="lead">
+        本指南旨在規範與 TomaToma 相關的粉絲創作活動，
+        讓粉絲能夠安心、尊重地享受創作與分享。
+      </p>
+      <p class="meta">
+        制定日：2026年5月9日 / 最後更新日：2026年5月9日
+      </p>
+    </header>
+
+    <div class="notice">
+      <p>
+        在本指南範圍內，您可以不經個別許可進行粉絲創作活動。
+        但本指南並不表示我們放棄與 TomaToma 及相關內容有關的任何著作權、商標權或其他權利。
+        本繁體中文版係為協助使用者理解而提供之翻譯版本；如本版本與日文原文之間有任何差異或不一致，應以日文原文為準。
+      </p>
+    </div>
+
+    <nav class="toc" aria-label="目錄">
+      <h2>目錄</h2>
+      <ol>
+        <li><a href="#policy">基本方針</a></li>
+        <li><a href="#permitted">允許的使用</a></li>
+        <li><a href="#non-commercial">非商業與興趣範圍</a></li>
+        <li><a href="#prohibited">禁止事項</a></li>
+        <li><a href="#adult">成人向表現</a></li>
+        <li><a href="#ai">AI 與生成式 AI</a></li>
+        <li><a href="#third-party">第三方權利</a></li>
+        <li><a href="#credit">標示與著作權資訊</a></li>
+        <li><a href="#permission">詢問與個別許可</a></li>
+        <li><a href="#takedown">停止公開或刪除之請求</a></li>
+        <li><a href="#changes">指南變更</a></li>
+        <li><a href="#disclaimer">免責聲明</a></li>
+      </ol>
+    </nav>
+
+    <section id="policy">
+      <h2>1. 基本方針</h2>
+      <p>
+        我們歡迎粉絲進行創作活動。
+      </p>
+      <p>
+        但為保護本角色之形象、世界觀、第三方權利及社會安全，
+        禁止任何違反本指南之使用。
+      </p>
+      <p>
+        本指南並不表示我們放棄任何著作權或其他權利。
+        與 TomaToma、插畫、設定、名稱、標誌及其他相關內容有關之一切著作權、商標權及其他權利，
+        均歸屬於我們或正當權利人。
+      </p>
+    </section>
+
+    <section id="permitted">
+      <h2>2. 允許的使用</h2>
+      <p>
+        原則上，個人基於非商業或興趣目的進行的粉絲創作是允許的。
+      </p>
+
+      <h3>允許使用之例</h3>
+      <ul>
+        <li>製作粉絲繪圖並發布於社群媒體</li>
+        <li>製作及公開漫畫、插畫、小說、影片、Cosplay 等作品</li>
+        <li>小規模發行同人誌、壓克力鑰匙圈、貼紙等物品</li>
+        <li>於個人網站、社群媒體或影片平台進行介紹、心得或評論</li>
+        <li>在原作基礎上加入新創意表現的戲仿、改編及粉絲作品</li>
+      </ul>
+
+      <p>
+        但若僅是複製、描摹、裁切或輕微加工官方素材，
+        可能會被視為未經授權使用官方素材，而非粉絲創作。
+      </p>
+    </section>
+
+    <section id="non-commercial">
+      <h2>3. 非商業與興趣範圍</h2>
+      <p>
+        以下使用方式，原則上視為非商業或興趣範圍內之使用。
+      </p>
+
+      <ul>
+        <li>於同人活動或粉絲活動中進行少量發行</li>
+        <li>以回收製作費、印刷費、材料費、運費等實際成本為目的之銷售</li>
+        <li>於個人社群媒體或影片平台公開</li>
+        <li>作為一般粉絲活動之一部分進行展示或發布</li>
+      </ul>
+
+      <h3>需要事前許可之使用</h3>
+      <ul>
+        <li>公司、法人、團體或事業經營者之使用</li>
+        <li>持續性或大規模銷售</li>
+        <li>以接單製作、大量生產、批發或委託銷售為主要目的之使用</li>
+        <li>將本角色用於廣告、宣傳、行銷活動或合作企劃</li>
+        <li>於 App、遊戲、NFT、AI 訓練資料、生成式 AI 服務或商業素材包中使用</li>
+        <li>其他經我們判斷為商業性較高之使用</li>
+      </ul>
+    </section>
+
+    <section id="prohibited">
+      <h2>4. 禁止事項</h2>
+
+      <h3>4.1 可能被誤認為官方之使用</h3>
+      <ul>
+        <li>以可能讓人誤解為官方、公認、合作、贊助或取得背書之方式表示</li>
+        <li>未經授權使用官方標誌、官方標章或類似官方網站之設計</li>
+        <li>使用可能被誤認為官方帳號之名稱、頭像或個人資料</li>
+        <li>將作品呈現為由我們發布或公告之內容</li>
+      </ul>
+
+      <p>公開粉絲創作時，請視情況加入以下類似標示。</p>
+
+      <div class="example">
+        本作品為粉絲創作，並非官方作品。
+      </div>
+
+      <h3>4.2 缺乏足夠創作性的使用</h3>
+      <ul>
+        <li>原樣轉載官方插畫、圖片、影片、音訊或文字</li>
+        <li>僅以描摹、裁切、改色或輕微修改方式使用官方素材</li>
+        <li>以瀏覽、保存或再次發布官方內容為主要目的之彙整網站、素材發布頁面或再發布服務</li>
+        <li>將官方素材商品化並銷售</li>
+      </ul>
+
+      <h3>4.3 嚴重損害本角色形象之使用</h3>
+      <ul>
+        <li>嚴重損害本角色、作品或我們之信用或形象的表現</li>
+        <li>惡意改作、侮辱，或以引發爭議為主要目的之使用</li>
+        <li>反社會、暴力、歧視、威脅或騷擾相關之表現</li>
+        <li>涉及誹謗中傷、名譽損害、隱私侵害或其他對第三方造成損害之使用</li>
+        <li>違反法令、公序良俗之使用</li>
+      </ul>
+
+      <h3>4.4 用於政治、宗教或思想活動</h3>
+      <p>禁止以下使用方式。</p>
+
+      <ul>
+        <li>以支持、批判或宣傳特定政黨、政治人物、候選人、政治團體或政治運動為目的之使用</li>
+        <li>用於選舉活動、政治宣傳或散布政治主張</li>
+        <li>以宣傳特定宗教、宗教團體、宗教活動、傳教活動或宗教勸誘為目的之使用</li>
+        <li>以表達支持或反對特定思想、信念、社會運動或團體活動為目的之使用</li>
+        <li>使人誤認本角色持有特定政治或宗教立場之使用</li>
+      </ul>
+
+      <div class="danger">
+        <p>
+          <strong>禁止：</strong>
+          不得將 TomaToma 作為政治或宗教主張之象徵、代言、廣告素材或宣傳素材使用。
+        </p>
+      </div>
+
+      <h3>4.5 使用者與帳號相關限制</h3>
+      <p>
+        對於以下個人、團體或帳號，我們得依自行判斷將其排除於本指南之許可範圍外。
+      </p>
+
+      <ul>
+        <li>因重大犯罪而有確定有罪判決之人</li>
+        <li>反社會勢力，或從事類似活動之人</li>
+        <li>助長違法行為、暴力、詐欺、剝削、歧視、仇恨或極端行為之人</li>
+        <li>以日常宣傳、勸誘或煽動政治、宗教、思想或社會運動活動為主要目的之個人、團體或帳號</li>
+        <li>經我們判斷可能損害我們之信用、本角色世界觀或品牌形象之人</li>
+      </ul>
+
+      <p>
+        本限制並非基於特定思想、信仰或政治立場本身。
+        其目的在於防止本角色被用於政治、宗教或反社會活動，
+        或被誤認為與此類活動有關。
+      </p>
+    </section>
+
+    <section id="adult">
+      <h2>5. 成人向表現</h2>
+      <p>
+        涉及成人向、過度性暗示、過度暴力或獵奇表現時，
+        必須遵守發布場所之規則、年齡限制、分級隔離及各平台條款。
+      </p>
+
+      <p>但以下表現禁止使用。</p>
+
+      <ul>
+        <li>涉及可能被視為未成年角色之性表現</li>
+        <li>肯定或助長性剝削、強迫、暴力或犯罪之表現</li>
+        <li>嚴重損害本角色尊嚴或形象之表現</li>
+        <li>未進行充分存取限制或分級隔離即公開之成人向表現</li>
+      </ul>
+
+      <p>
+        若我們判斷作品不適當，可能會要求停止公開、刪除或修正該作品。
+      </p>
+    </section>
+
+    <section id="ai">
+      <h2>6. AI 與生成式 AI</h2>
+      <p>禁止以下使用方式。</p>
+
+      <ul>
+        <li>未經許可，將官方插畫、粉絲創作或角色圖片用作 AI 訓練資料</li>
+        <li>製作、發布或銷售可重現本角色之 AI 模型、LoRA、提示詞集、素材包或類似資料</li>
+        <li>以可能被誤認為官方作品之方式公開 AI 生成內容</li>
+        <li>以可能侵害我們或第三方權利之方式使用 AI 生成內容</li>
+      </ul>
+
+      <p>
+        若公開 AI 生成內容，請明確標示使用了 AI，並充分注意避免與官方作品產生混淆。
+      </p>
+    </section>
+
+    <section id="third-party">
+      <h2>7. 第三方權利</h2>
+      <p>
+        若粉絲創作中使用第三方著作物、商標、人物、角色、音樂、照片、影片、標誌或其他素材，
+        請確認相關權利人之許可與指南。
+      </p>
+      <p>
+        因將 TomaToma 與第三方權利或素材組合使用而產生之任何爭議或問題，我們不負任何責任。
+      </p>
+    </section>
+
+    <section id="credit">
+      <h2>8. 標示與著作權資訊</h2>
+      <p>
+        公開或發布粉絲創作時，請於合理可行範圍內加入以下標示。
+      </p>
+
+      <div class="credit-box">
+        原創角色：TomaToma<br />
+        本作品為粉絲創作，並非官方作品。<br />
+        © 2026 TomaToma. All Rights Reserved.
+      </div>
+
+      <p>
+        如欲更明確標示權利人或品牌名稱，也可以使用以下標示。
+      </p>
+
+      <div class="credit-box">
+        © 2026 TomaToma / Mackerelish. All Rights Reserved.
+      </div>
+    </section>
+
+    <section id="permission">
+      <h2>9. 詢問與個別許可</h2>
+      <p>
+        若希望進行以下使用，請事先聯絡我們。
+      </p>
+
+      <ul>
+        <li>商業使用</li>
+        <li>公司、法人或團體之使用</li>
+        <li>用於廣告、宣傳或合作企劃</li>
+        <li>大量生產或大規模銷售</li>
+        <li>於 App、遊戲、影像作品、出版物或類似媒體中使用</li>
+        <li>不確定是否需要許可之使用</li>
+      </ul>
+
+      <p>
+        我們未必能回覆所有詢問。
+        即使我們未個別回覆，也不表示已允許任何違反本指南之使用。
+      </p>
+
+      <p>
+        聯絡方式：
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSejtHmw7IOlF52pmQCSWizEMwxTyTQ-Nzdc-nG6dwPHLbxNJA/viewform?usp=publish-editor">聯絡表單</a>
+      </p>
+    </section>
+
+    <section id="takedown">
+      <h2>10. 停止公開或刪除之請求</h2>
+      <p>
+        若我們判斷粉絲創作不適當，得在揭示或不揭示理由之情況下，
+        要求停止公開、停止銷售、刪除或修正該粉絲創作。
+      </p>
+      <p>
+        使用者於收到我們之請求時，應迅速遵從該請求。
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>11. 指南變更</h2>
+      <p>
+        我們得不經事前通知變更本指南。
+      </p>
+      <p>
+        修訂後之指南於公開時生效。
+        進行粉絲創作活動前，請務必確認最新版本。
+      </p>
+    </section>
+
+    <section id="disclaimer">
+      <h2>12. 免責聲明</h2>
+      <p>
+        粉絲創作活動應由使用者自行負責進行。
+      </p>
+      <p>
+        因粉絲創作活動而於使用者與第三方之間發生任何爭議、損害或問題時，
+        我們不負任何責任。
+      </p>
+    </section>
+
+    <div class="license-link">
+      <p>
+        關於粉絲創作商品之銷售，請參閱
+        <a href="./fan_creator_license_zh_hant.html">粉絲創作商品銷售授權條款</a>。
+      </p>
+    </div>
+
+    <footer>
+      <p>© 2026 TomaToma. All Rights Reserved.</p>
+      <p>粉絲創作指南</p>
+    </footer>
+  </main>
+</body>
+</html>
