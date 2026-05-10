@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Structree — Structure your thoughts into worlds, pyramids, and trees</title>
+  <meta
+    name="description"
+    content="Structree is a local-first iOS app for structured thinking. Organize your ideas through World, Pyramid, and Tree pages. No login. No cloud."
+  />
+  <meta name="theme-color" content="#173B33" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Structree — Structured thinking for iOS" />
+  <meta
+    property="og:description"
+    content="Organize your ideas through World, Pyramid, and Tree pages. Text-first, image-supported, and fully local on your device."
+  />
+  <meta property="og:image" content="./ogp.png" />
+  <meta property="og:url" content="https://example.com" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Structree — Structured thinking for iOS" />
+  <meta
+    name="twitter:description"
+    content="A local-first iOS app for organizing your thoughts into worlds, pyramids, and trees."
+  />
+  <meta name="twitter:image" content="./ogp.png" />
+
+  <style>
+    :root {
+      --bg: #fbf8f0;
+      --bg-soft: #f3eadb;
+      --surface: rgba(255, 255, 255, 0.74);
+      --surface-strong: #ffffff;
+      --text: #17221f;
+      --muted: #68736f;
+      --line: rgba(23, 34, 31, 0.12);
+      --brand: #173b33;
+      --brand-2: #2f6b5d;
+      --accent: #d99a4e;
+      --accent-2: #7e9f7e;
+      --shadow: 0 24px 80px rgba(23, 34, 31, 0.12);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(217, 154, 78, 0.22), transparent 30%),
+        radial-gradient(circle at 90% 8%, rgba(47, 107, 93, 0.18), transparent 28%),
+        linear-gradient(180deg, #fbf8f0 0%, #f9f3e8 46%, #eef5ee 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px);
+      background: rgba(251, 248, 240, 0.76);
+      border-bottom: 1px solid rgba(23, 34, 31, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 72px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.08rem;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(145deg, var(--brand), var(--brand-2));
+      box-shadow: 0 10px 30px rgba(23, 59, 51, 0.24);
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--brand);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(23, 59, 51, 0.22);
+    }
+
+    .hero {
+      padding: 86px 0 82px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(23, 34, 31, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--brand);
+      font-size: 0.86rem;
+      font-weight: 700;
+      box-shadow: 0 10px 40px rgba(23, 34, 31, 0.06);
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 24px 0 18px;
+      font-size: clamp(3rem, 8vw, 6.9rem);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+      max-width: 850px;
+    }
+
+    .hero-title-highlight {
+      color: var(--brand-2);
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      color: #41504b;
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 18px 44px rgba(23, 59, 51, 0.24);
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.66);
+      color: var(--brand);
+      border-color: rgba(23, 34, 31, 0.12);
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .phone-wrap {
+      position: relative;
+      min-height: 640px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(1px);
+      opacity: 0.9;
+    }
+
+    .orb-one {
+      width: 260px;
+      height: 260px;
+      background: rgba(217, 154, 78, 0.22);
+      top: 26px;
+      right: 8px;
+    }
+
+    .orb-two {
+      width: 320px;
+      height: 320px;
+      background: rgba(126, 159, 126, 0.18);
+      bottom: 22px;
+      left: -18px;
+    }
+
+    .phone {
+      position: relative;
+      width: min(350px, 78vw);
+      aspect-ratio: 9 / 18.9;
+      padding: 13px;
+      border-radius: 48px;
+      background: #17221f;
+      box-shadow: 0 34px 100px rgba(23, 34, 31, 0.35);
+      transform: rotate(2.5deg);
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      width: 112px;
+      height: 28px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #17221f;
+      z-index: 3;
+    }
+
+    .phone-screen {
+      position: relative;
+      height: 100%;
+      border-radius: 38px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(246, 239, 226, 0.94)),
+        var(--bg-soft);
+    }
+
+    .mock-app {
+      padding: 58px 18px 18px;
+      min-height: 100%;
+    }
+
+    .mock-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .mock-title {
+      font-weight: 900;
+      color: var(--brand);
+      letter-spacing: -0.05em;
+      font-size: 1.28rem;
+    }
+
+    .mock-pill {
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: #fff;
+      border: 1px solid rgba(23, 34, 31, 0.08);
+      padding: 6px 9px;
+      border-radius: 999px;
+    }
+
+    .mock-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+      margin-bottom: 16px;
+    }
+
+    .mock-tab {
+      padding: 8px 0;
+      text-align: center;
+      border-radius: 12px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--muted);
+      border: 1px solid rgba(23, 34, 31, 0.08);
+    }
+
+    .mock-tab.active {
+      color: #fff;
+      background: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .structure-card {
+      padding: 16px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(23, 34, 31, 0.08);
+      box-shadow: 0 16px 40px rgba(23, 34, 31, 0.08);
+      margin-bottom: 12px;
+    }
+
+    .structure-card h3 {
+      margin: 0 0 4px;
+      font-size: 0.96rem;
+      letter-spacing: -0.03em;
+    }
+
+    .structure-card p {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .tree-lines {
+      margin-top: 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .node {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #fbf8f0;
+      border: 1px solid rgba(23, 34, 31, 0.08);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .node.indent-1 {
+      margin-left: 22px;
+    }
+
+    .node.indent-2 {
+      margin-left: 44px;
+    }
+
+    .node-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      color: var(--brand-2);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    h2 {
+      margin: 10px 0 14px;
+      font-size: clamp(2.1rem, 4.8vw, 4.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(23, 34, 31, 0.09);
+      box-shadow: 0 18px 60px rgba(23, 34, 31, 0.07);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      background: rgba(23, 59, 51, 0.08);
+      color: var(--brand);
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+      letter-spacing: -0.04em;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .panel {
+      padding: 34px;
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid rgba(23, 34, 31, 0.09);
+      box-shadow: var(--shadow);
+    }
+
+    .visual-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .visual-row {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(251, 248, 240, 0.78);
+      border: 1px solid rgba(23, 34, 31, 0.08);
+    }
+
+    .visual-number {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(145deg, var(--brand), var(--brand-2));
+    }
+
+    .visual-row h3 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .visual-row p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .privacy-band {
+      padding: 46px;
+      border-radius: 38px;
+      background:
+        linear-gradient(135deg, rgba(23, 59, 51, 0.96), rgba(47, 107, 93, 0.95)),
+        var(--brand);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+      box-shadow: 0 26px 80px rgba(23, 59, 51, 0.26);
+    }
+
+    .privacy-band h2 {
+      margin: 0 0 10px;
+      color: #fff;
+    }
+
+    .privacy-band p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 680px;
+      font-size: 1.05rem;
+    }
+
+    .privacy-list {
+      display: grid;
+      gap: 10px;
+      min-width: 260px;
+    }
+
+    .privacy-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.18);
+      font-size: 0.82rem;
+    }
+
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .use-card {
+      min-height: 148px;
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(23, 34, 31, 0.09);
+    }
+
+    .use-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .use-card span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .cta {
+      padding: 96px 0;
+    }
+
+    .cta-card {
+      text-align: center;
+      padding: 64px 34px;
+      border-radius: 42px;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(217, 154, 78, 0.25), transparent 26%),
+        radial-gradient(circle at 100% 40%, rgba(47, 107, 93, 0.16), transparent 28%),
+        rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(23, 34, 31, 0.09);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-card h2 {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-card p {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(23, 34, 31, 0.09);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--brand);
+    }
+
+    @media (max-width: 920px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero-grid,
+      .split,
+      .privacy-band {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .phone-wrap {
+        min-height: 560px;
+      }
+
+      .feature-grid,
+      .use-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .privacy-list {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .nav-cta {
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: 0.86rem;
+      }
+
+      .hero {
+        padding: 44px 0 56px;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .phone-wrap {
+        min-height: 520px;
+      }
+
+      .phone {
+        width: min(310px, 86vw);
+        transform: rotate(0deg);
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .feature-grid,
+      .use-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card,
+      .panel,
+      .privacy-band,
+      .cta-card {
+        padding: 26px;
+        border-radius: 28px;
+      }
+
+      .privacy-item {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav" aria-label="Primary navigation">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="Structree home">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span>Structree</span>
+        </a>
+        <nav class="nav-links" aria-label="Page links">
+          <a href="#concept">Concept</a>
+          <a href="#structures">Structures</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#download" class="nav-cta">Coming soon</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Local-first structured thinking app for iOS
+            </div>
+            <h1>
+              Structure your thoughts into <span class="hero-title-highlight">worlds</span>, pyramids, and trees.
+            </h1>
+            <p class="hero-copy">
+              Structree helps you turn messy ideas into clear structures through three thinking spaces: World, Pyramid, and Tree. Text-first, image-supported, and fully stored on your device.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#download">Get notified</a>
+              <a class="button button-secondary" href="#structures">Explore the app</a>
+            </div>
+            <p class="hero-note">No login. No cloud account. No unnecessary external communication.</p>
+          </div>
+
+          <div class="phone-wrap" aria-label="Structree app preview">
+            <div class="orb orb-one" aria-hidden="true"></div>
+            <div class="orb orb-two" aria-hidden="true"></div>
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="mock-app">
+                  <div class="mock-header">
+                    <div class="mock-title">Structree</div>
+                    <div class="mock-pill">Local</div>
+                  </div>
+                  <div class="mock-tabs" aria-hidden="true">
+                    <div class="mock-tab active">World</div>
+                    <div class="mock-tab">Pyramid</div>
+                    <div class="mock-tab">Tree</div>
+                  </div>
+                  <div class="structure-card">
+                    <h3>Product idea</h3>
+                    <p>Clarify the purpose, audience, and structure before building.</p>
+                    <div class="tree-lines">
+                      <div class="node"><span class="node-dot"></span>Core concept</div>
+                      <div class="node indent-1"><span class="node-dot"></span>User problems</div>
+                      <div class="node indent-2"><span class="node-dot"></span>Input friction</div>
+                      <div class="node indent-2"><span class="node-dot"></span>Cognitive load</div>
+                    </div>
+                  </div>
+                  <div class="structure-card">
+                    <h3>Next structure</h3>
+                    <p>Break down, connect, and refine your thinking step by step.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="concept" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Concept</div>
+            <h2>Not just notes. A place to shape your thinking.</h2>
+            <p class="section-lead">
+              Structree is designed for moments when a blank note is too flat, a mind map is too free-form, and a project tool is too heavy.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">✍️</div>
+              <h3>Text-first input</h3>
+              <p>Write quickly and stay focused on the structure of your ideas, not decoration or formatting.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🖼️</div>
+              <h3>Optional images</h3>
+              <p>Add images only when they support your thinking. The main experience remains simple and lightweight.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">📱</div>
+              <h3>Built for iOS</h3>
+              <p>Designed as a focused mobile workspace for organizing thoughts whenever ideas appear.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="structures" class="section">
+        <div class="container split">
+          <div>
+            <div class="section-kicker">Three spaces</div>
+            <h2>Choose the structure that matches your idea.</h2>
+            <p class="section-lead">
+              Different thoughts need different shapes. Structree gives you three simple pages for organizing broad contexts, layered logic, and branching relationships.
+            </p>
+          </div>
+
+          <div class="panel visual-stack">
+            <div class="visual-row">
+              <div class="visual-number">01</div>
+              <div>
+                <h3>World</h3>
+                <p>Capture broad ideas, contexts, and related elements in one thinking space.</p>
+              </div>
+            </div>
+            <div class="visual-row">
+              <div class="visual-number">02</div>
+              <div>
+                <h3>Pyramid</h3>
+                <p>Break a concept into layers so the logic becomes easier to understand.</p>
+              </div>
+            </div>
+            <div class="visual-row">
+              <div class="visual-number">03</div>
+              <div>
+                <h3>Tree</h3>
+                <p>Grow ideas through connected branches and clarify relationships over time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="section">
+        <div class="container">
+          <div class="privacy-band">
+            <div>
+              <h2>Your thoughts stay with you.</h2>
+              <p>
+                Structree works entirely on your device. It does not require an account, a cloud workspace, or unnecessary external communication. It is built for private thinking.
+              </p>
+            </div>
+            <div class="privacy-list" aria-label="Privacy features">
+              <div class="privacy-item"><span class="check">✓</span>No login required</div>
+              <div class="privacy-item"><span class="check">✓</span>No cloud account</div>
+              <div class="privacy-item"><span class="check">✓</span>Local-first storage</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Use cases</div>
+            <h2>For anyone who thinks in structures.</h2>
+            <p class="section-lead">
+              Use Structree to organize what you are building, studying, writing, planning, or trying to understand.
+            </p>
+          </div>
+
+          <div class="use-grid">
+            <div class="use-card">
+              <strong>Idea planning</strong>
+              <span>Turn vague thoughts into concrete parts.</span>
+            </div>
+            <div class="use-card">
+              <strong>Project thinking</strong>
+              <span>Break down goals, problems, and decisions.</span>
+            </div>
+            <div class="use-card">
+              <strong>Study notes</strong>
+              <span>Organize concepts into layers and branches.</span>
+            </div>
+            <div class="use-card">
+              <strong>Writing prep</strong>
+              <span>Shape arguments before writing long-form text.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="cta">
+        <div class="container">
+          <div class="cta-card">
+            <div class="section-kicker">Coming soon</div>
+            <h2>Build clearer thoughts with Structree.</h2>
+            <p>
+              Structree is preparing for launch. Follow the launch page or check back soon for the App Store link.
+            </p>
+            <div class="hero-actions" style="justify-content: center; margin-top: 0;">
+              <a class="button button-primary" href="https://www.producthunt.com/" target="_blank" rel="noopener">Follow on Product Hunt</a>
+              <a class="button button-secondary" href="https://apps.apple.com/" target="_blank" rel="noopener">App Store coming soon</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Structree. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms</a>
+          <a href="./support.html">Support</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
