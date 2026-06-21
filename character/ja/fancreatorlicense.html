@@ -10,22 +10,38 @@
   />
 
   <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --accent: #4f46e5;
-      --accent-bg: #eef2ff;
+:root {
+      --bg: #fff7fa;
+      --card: #fffdfd;
+      --text: #33242a;
+      --muted: #7a6470;
+      --border: #f2d6e0;
+
+      --accent: #d85f86;
+      --accent-strong: #b83f6b;
+      --accent-soft: #f6a9bf;
+      --accent-bg: #fff0f5;
+      --accent-bg-strong: #ffe5ee;
+
       --success: #047857;
-      --success-bg: #ecfdf5;
+      --success-bg: #effaf5;
+      --success-border: #b7ead3;
+
       --warning: #92400e;
-      --warning-bg: #fffbeb;
+      --warning-bg: #fff8e8;
+      --warning-border: #f5d98d;
+
       --danger: #b91c1c;
-      --danger-bg: #fef2f2;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --danger-bg: #fff1f2;
+      --danger-border: #fecaca;
+
+      --radius: 18px;
+      --radius-lg: 28px;
+      --shadow: 0 16px 45px rgba(168, 71, 107, 0.11);
+      --shadow-strong: 0 22px 60px rgba(168, 71, 107, 0.16);
+
+      /* Replace this URL with your 720x540 top image path. */
+      --top-visual-image: url("../tomatoma-license-hero.png");
     }
 
     * {
@@ -42,62 +58,126 @@
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+      line-height: 1.75;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(246, 169, 191, 0.28), transparent 34%),
+        radial-gradient(circle at top right, rgba(255, 229, 238, 0.72), transparent 34%),
+        linear-gradient(180deg, #fff7fa 0%, #fffdfd 48%, #fff7fa 100%);
+    }
+
+    html[lang="ja"] body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
         "Hiragino Sans",
         "Hiragino Kaku Gothic ProN",
         "Noto Sans JP",
         Meiryo,
         sans-serif;
       line-height: 1.85;
-      color: var(--text);
-      background: var(--bg);
     }
 
+    html[lang="zh-Hant"] body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        Arial,
+        sans-serif;
+      line-height: 1.8;
+    }
+
+
     a {
-      color: var(--accent);
+      color: var(--accent-strong);
       text-decoration: none;
+      overflow-wrap: anywhere;
+      font-weight: 650;
     }
 
     a:hover {
+      color: var(--accent);
       text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
     }
 
     .page {
       width: min(980px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 40px 0 64px;
+      padding: 36px 0 64px;
+    }
+
+    .top-visual {
+      position: relative;
+      width: min(360px, 100%);
+      aspect-ratio: 4 / 3;
+      margin: 0 auto 28px;
+      overflow: hidden;
+      border: 1px solid rgba(216, 95, 134, 0.22);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, rgba(255, 240, 245, 0.1), rgba(255, 247, 250, 0.24)),
+        var(--top-visual-image) center / cover no-repeat,
+        linear-gradient(135deg, #fff0f5, #ffffff 55%, #ffe5ee);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .top-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 42%),
+        radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.34), transparent 32%);
     }
 
     .hero {
-      padding: 42px 32px;
-      background: linear-gradient(135deg, #ffffff, #eef2ff);
-      border: 1px solid var(--border);
-      border-radius: 24px;
+      padding: 42px 34px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 240, 245, 0.96)),
+        radial-gradient(circle at top right, rgba(246, 169, 191, 0.35), transparent 42%);
+      border: 1px solid rgba(216, 95, 134, 0.22);
+      border-radius: 26px;
       box-shadow: var(--shadow);
       margin-bottom: 28px;
     }
 
     .hero__label {
       display: inline-block;
-      padding: 4px 12px;
+      padding: 5px 14px;
       margin-bottom: 14px;
+      border: 1px solid rgba(216, 95, 134, 0.18);
       border-radius: 999px;
       background: var(--accent-bg);
-      color: var(--accent);
+      color: var(--accent-strong);
       font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: 0.01em;
     }
 
     h1 {
       margin: 0 0 12px;
       font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.25;
-      letter-spacing: -0.03em;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+      color: #2f2027;
     }
 
     .lead {
       margin: 0;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1.06rem;
     }
 
     .meta {
@@ -112,8 +192,22 @@
       padding: 18px 20px;
       margin-bottom: 24px;
       border-radius: var(--radius);
-      border: 1px solid #c7d2fe;
+      box-shadow: 0 10px 28px rgba(168, 71, 107, 0.07);
+    }
+
+    .notice {
+      border: 1px solid rgba(216, 95, 134, 0.25);
       background: var(--accent-bg);
+    }
+
+    .summary {
+      border: 1px solid var(--success-border);
+      background: var(--success-bg);
+    }
+
+    .warning-box {
+      border: 1px solid var(--warning-border);
+      background: var(--warning-bg);
     }
 
     .notice p,
@@ -122,18 +216,8 @@
       margin: 0;
     }
 
-    .summary {
-      border-color: #a7f3d0;
-      background: var(--success-bg);
-    }
-
     .summary strong {
       color: var(--success);
-    }
-
-    .warning-box {
-      border-color: #fde68a;
-      background: var(--warning-bg);
     }
 
     .warning-box strong {
@@ -143,7 +227,7 @@
     .toc {
       padding: 24px;
       margin-bottom: 28px;
-      background: var(--card);
+      background: rgba(255, 253, 253, 0.94);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -157,16 +241,19 @@
     .toc ol {
       margin: 0;
       padding-left: 1.4em;
+      columns: 2;
+      column-gap: 32px;
     }
 
     .toc li {
       margin: 4px 0;
+      break-inside: avoid;
     }
 
     section {
-      padding: 28px;
+      padding: 30px;
       margin-bottom: 20px;
-      background: var(--card);
+      background: rgba(255, 253, 253, 0.94);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -175,14 +262,16 @@
     h2 {
       margin: 0 0 16px;
       padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(216, 95, 134, 0.18);
       font-size: 1.45rem;
-      line-height: 1.4;
+      line-height: 1.35;
+      color: #3a2530;
     }
 
     h3 {
       margin: 24px 0 10px;
       font-size: 1.1rem;
+      color: #4a303c;
     }
 
     p {
@@ -209,8 +298,8 @@
     .mini-card {
       padding: 16px;
       border: 1px solid var(--border);
-      border-radius: 14px;
-      background: #f9fafb;
+      border-radius: 16px;
+      background: #fff9fb;
     }
 
     .mini-card h3 {
@@ -218,12 +307,12 @@
     }
 
     .ok {
-      border-color: #a7f3d0;
+      border-color: var(--success-border);
       background: var(--success-bg);
     }
 
     .ng {
-      border-color: #fecaca;
+      border-color: var(--danger-border);
       background: var(--danger-bg);
     }
 
@@ -238,8 +327,8 @@
       margin: 14px 0;
       border-left: 4px solid var(--accent);
       background: var(--accent-bg);
-      border-radius: 10px;
-      font-weight: 600;
+      border-radius: 12px;
+      font-weight: 650;
     }
 
     .credit-box {
@@ -260,16 +349,44 @@
     .danger {
       padding: 16px 18px;
       margin: 16px 0;
-      border: 1px solid #fecaca;
-      border-radius: 12px;
+      border: 1px solid var(--danger-border);
+      border-radius: 14px;
       background: var(--danger-bg);
+    }
+
+    .country-panel {
+      padding: 18px;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff9fb;
+    }
+
+    .country-panel h3 {
+      margin-top: 0;
+    }
+
+    .country-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 6px 18px;
+      padding-left: 1.1em;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .country-list li {
+      margin: 0;
+      overflow-wrap: anywhere;
     }
 
     .table-wrap {
       overflow-x: auto;
       margin: 16px 0;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
+      background: #ffffff;
     }
 
     table {
@@ -288,8 +405,9 @@
     }
 
     th {
-      background: #f9fafb;
-      font-weight: 700;
+      background: var(--accent-bg);
+      color: #3a2530;
+      font-weight: 800;
     }
 
     tr:last-child td {
@@ -300,7 +418,7 @@
       overflow-x: auto;
       margin: 16px 0;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       background: #ffffff;
     }
 
@@ -328,6 +446,7 @@
       border-bottom: 0;
     }
 
+
     footer {
       margin-top: 36px;
       padding: 28px 0 0;
@@ -339,7 +458,12 @@
     @media (max-width: 760px) {
       .page {
         width: min(100% - 20px, 980px);
-        padding-top: 20px;
+        padding-top: 18px;
+      }
+
+      .top-visual {
+        margin-bottom: 20px;
+        border-radius: 22px;
       }
 
       .hero,
@@ -348,9 +472,14 @@
         padding: 22px 18px;
       }
 
+      .toc ol {
+        columns: 1;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
+
 
       .country-table td {
         display: block;
@@ -367,6 +496,8 @@
 
 <body>
   <main class="page">
+    <figure class="top-visual" aria-label="TomaToma fan-made goods license visual"></figure>
+
     <header class="hero">
       <div class="hero__label">Fan-made Goods License</div>
       <h1>TomaToma ファン制作物販売ライセンス規約</h1>
